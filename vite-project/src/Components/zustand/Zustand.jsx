@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Zustand = () => {
     function BearCounter() {
         const bears = useBearStore((state) => state.bears)
-        return <h1>{bears} bears around here...</h1>
+        return <h1>bears: {bears}</h1>
     }
 
     function Controls() {

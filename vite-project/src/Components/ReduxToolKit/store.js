@@ -21,7 +21,21 @@ export const store = configureStore({
   reducer: {
     bear: persistedBearReducer,
     fish: persistedFishReducer,
-  },
+  }, 
+  middleware: (getDefaultMiddleware) => // что бы не было ошибки(отключить проверку сериализуемости для redux-persist)
+    getDefaultMiddleware({
+      serializableCheck: {
+        // игнорируем redux-persist actions
+        ignoredActions: [
+          'persist/PERSIST',
+          'persist/REHYDRATE',
+          'persist/REGISTER',
+          'persist/FLUSH',
+          'persist/PURGE',
+          'persist/PAUSE',
+        ],
+      },
+    }),
 });
 
 export const persistor = persistStore(store);

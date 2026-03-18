@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { plusBear, minusBear, removeAllBear } from '../ReduxToolKit/bearSlice';
 import { plusFish,minusFish,removeAllFish } from './fishSlice';
+import { Link } from 'react-router-dom';
 const ReduxTk = () => {
     const bears = useSelector((state) => state.bear.bears);
     const fish = useSelector((state) => state.fish.fish);
@@ -9,6 +10,7 @@ const ReduxTk = () => {
 
     return (
         <div>
+            <Link to="/">Home</Link>
             <h1>{bears} bears</h1>
             <h1>{fish} fish</h1>
             <p>bear</p>

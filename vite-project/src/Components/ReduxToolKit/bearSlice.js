@@ -21,4 +21,4 @@ const bearSlice = createSlice({
 });
 
 export const { plusBear, minusBear, removeAllBear } = bearSlice.actions;
-export default bearSlice.reducer;
+export default bearSlice.reducer;4

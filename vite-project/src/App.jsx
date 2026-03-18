@@ -9,7 +9,6 @@ import Home from './Components/Home/Home';
 import Zustand from './Components/zustand/Zustand';
 import ReduxTk from './Components/ReduxToolKit/ReduxTk';
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
