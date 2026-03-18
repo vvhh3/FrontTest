@@ -1,0 +1,24 @@
+# TypeScript React 
+- Опыт работы с React + Redux/Zustand/MobX.
+- SCSS, Tailwind
+- Git
+- Next.js, Jest, Docker
+- Понимание принципов разработки: SOLID, KISS
+- WebSocket
+- Понимание принципов работы JWT и безопасного хранения токенов
+- Опыт работы с асинхронными HTTP-запросами и обработкой ошибок
+- ООП и SOLID
+- Redis
+- Понимание state-management (useState, useEffect — уже достаточно)
+- CSS Modules знаете современные стандарты (Flex, Grid), методологии (CSS Modules) и умеете создавать адаптивную верстку
+- Vite/Webpack
+- Storybook
+- Тесты (жирный плюс, но не везде надо. по этому не в первую очередь) Unit, Integration или E2E тестов
+- Event Loop, асинхронность, модель памяти
+- Знаете ключевые Browser API: Storage, Cookies, Network (Fetch/WebSocket), а также API для производительности и анимаций (RAF, IntersectionObserver и так далее)
+- Знаете основы безопасности фронтенда: понимаете природу XSS и CSRF, умеете безопасно обрабатывать пользовательские данные и соблюдать CSP
+- CI/CD (понимание что это и зачем нужно. тыкать не обязательно)
+- Vue.js (ознакомиться, потыкать)
+- Postrge SQL (базово потыкать. просто чтобы понимать)
+-
+-
