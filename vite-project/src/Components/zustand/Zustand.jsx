@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Zustand = () => {
     function BearCounter() {
         const bears = useBearStore((state) => state.bears)
-        return <h1>bears: {bears}</h1>
+        return <h1 className='text-xl font-bold'>bears: {bears}</h1>
     }
 
     function Controls() {
@@ -29,6 +29,14 @@ const Zustand = () => {
             <p></p>
             <Controls />
             <BearCounter />
+            <div class=" grid w-1/5 grid-cols-3 gap-4 mt-4">
+                <div className='flex bg-sky-300 justify-start'>01</div>
+                <div className='flex justify-center bg-sky-300'>02</div>
+                <div className='flex justify-end bg-sky-300'>03</div>
+                <div className='flex justify-start bg-sky-300'>04</div>
+                <div className='flex justify-center bg-sky-300'>05</div>
+                <div className='flex justify-end bg-sky-300'>06</div>
+            </div>
         </div>
     );
 }
