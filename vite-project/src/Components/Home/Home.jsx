@@ -12,12 +12,20 @@ const Home = () => {
 
     return (
         <div>
-            <Link to="/">Home</Link>
+            <div className="bg-red-500 text-white p-4 ">
+                TEST
+            </div>
+            <div className='bg-gray-300 w-20 mb-2'>
+                <Link to="/" className="no-underline text-gray-900 p-4 transition-colors duration-300 hover:text-blue-600">Home</Link>
+            </div>
             {/* <GetBear /> */}
-            <p></p>
-            <Link to="/Zustand">Zustand</Link>
-            <p></p>
-            <Link to="/RTK">Redux ToolKit</Link>
+            <div className='bg-gray-300 w-20 mb-2'>
+                <Link to="/Zustand" className="no-underline text-gray-900 p-4 transition-colors duration-300 hover:text-blue-600">Zustand</Link>
+            </div>
+            <div className='bg-gray-300 w-20 mb-2'>
+                {/* Redux ToolKit */}
+                <Link to="/RTK" className="no-underline text-gray-900 p-4 transition-colors duration-300 hover:text-blue-600">RTK</Link>
+            </div>
         </div>
     );
 }
