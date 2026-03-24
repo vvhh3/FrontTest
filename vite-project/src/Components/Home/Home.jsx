@@ -26,6 +26,10 @@ const Home = () => {
                 {/* Redux ToolKit */}
                 <Link to="/RTK" className="no-underline text-gray-900 p-4 transition-colors duration-300 hover:text-blue-600">RTK</Link>
             </div>
+            <div className='bg-gray-300 w-20 mb-2'>
+                {/* Redux ToolKit */}
+                <Link to="/Redis" className="no-underline text-gray-900 p-4 transition-colors duration-300 hover:text-blue-600">Front</Link>
+            </div>
         </div>
     );
 }

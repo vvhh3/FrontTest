@@ -30,6 +30,7 @@ const ReduxTk = () => {
             <button onClick={() => dispatch(removeAllFish())} className='m-1 bg-gray-300 box-border size-11 p-1 duration-500 hover:bg-sky-400'>
                 reset
             </button>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, facilis perspiciatis eum facere placeat incidunt sapiente saepe totam reiciendis est necessitatibus, nemo dolorum vitae quas recusandae! Quidem nobis tempora commodi!
         </div>
     );
 }
