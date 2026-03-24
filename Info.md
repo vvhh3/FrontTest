@@ -23,7 +23,8 @@
 
 
 
-
+# JWT 
+- npm install express jsonwebtoken bcryptjs cors
 
 # StoryBook
 

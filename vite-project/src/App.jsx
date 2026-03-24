@@ -9,6 +9,7 @@ import Home from './Components/Home/Home';
 import Zustand from './Components/zustand/Zustand';
 import ReduxTk from './Components/ReduxToolKit/ReduxTk';
 import Front from './Components/Redis/Front';
+import JWT from './Components/JWT/JWT';
 function App() {
 
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/Zustand' element={<Zustand/>}/>
           <Route path='/RTK' element={<ReduxTk/>}/>
           <Route path='/Redis' element={<Front/>}/>
+          <Route path='/JWT' element={<JWT/>}/>
         </Routes>
       </BrowserRouter>
     </>
