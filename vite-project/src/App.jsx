@@ -10,7 +10,7 @@ import Zustand from './Components/zustand/Zustand';
 import ReduxTk from './Components/ReduxToolKit/ReduxTk';
 import Front from './Components/Redis/Front';
 import JWT from './Components/JWT/JWT';
-
+import UseRef from './Components/hooks/UseRef';
 
 
 function App() {
@@ -24,6 +24,7 @@ function App() {
           <Route path='/RTK' element={<ReduxTk/>}/>
           <Route path='/Redis' element={<Front/>}/>
           <Route path='/JWT' element={<JWT/>}/>
+          <Route path='/Ref' element={<UseRef/>}/>
         </Routes>
       </BrowserRouter>
     </>

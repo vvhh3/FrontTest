@@ -8,8 +8,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const SECRET = ""; // хранить в .env
-const users = []; // в реальном приложении – база
+const SECRET = "";
+const users = [];
 
 // Регистрация
 app.post("/register", async (req, res) => {

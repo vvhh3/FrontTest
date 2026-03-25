@@ -18,6 +18,7 @@ const Zustand = () => {
             <button onClick={removeAllBears} className='m-1 bg-gray-300 p-1 duration-500 hover:bg-blue-400'>removeAllBears</button>
         </>)
     }
+    
     return (
         <div>
             <div className='bg-red-500 text-white text-[20px] p-4'>
@@ -29,7 +30,7 @@ const Zustand = () => {
             <p></p>
             <Controls />
             <BearCounter />
-            <div class=" grid w-1/5 grid-cols-3 gap-4 mt-4">
+            <div className=" grid w-1/5 grid-cols-3 gap-4 mt-4">
                 <div className='flex bg-sky-300 justify-start'>01</div>
                 <div className='flex justify-center bg-sky-300'>02</div>
                 <div className='flex justify-end bg-sky-300'>03</div>
