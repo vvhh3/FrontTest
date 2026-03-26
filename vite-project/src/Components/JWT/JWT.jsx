@@ -42,7 +42,7 @@ const JWT = () => {
       {profile && 
       <div className="mt-5">
         <h2>Profile</h2>
-        <pre>{JSON.stringify(profile, null, 2)}</pre>
+        <p>{JSON.stringify(profile, null, 2)}</p>
       </div>}
     </div>
   );

@@ -1,231 +1,357 @@
-# 1. Базовая настройка Git
+# 🧠 Полный гайд по Git (шпаргалка)
 
-Перед началом работы нужно один раз настроить Git — указать, кто ты как автор коммитов:`
+---
 
-```
+# ⚙️ 1. Базовая настройка Git
+
+Настраивается один раз:
+
+```bash
 git config --global user.name "Твоё Имя"
 git config --global user.email "your@email.com"
 ```
 
-Проверить текущие настройки:
+Проверка настроек:
 
-```
+```bash
 git config --list
-
-Задать редактор (например, VS Code):
-
-git config --global core.editor "code --wait"
-
 ```
+
+Редактор (например VS Code):
+
+```bash
+git config --global core.editor "code --wait"
+```
+
+---
 
 # 📁 2. Создание и получение проекта
 
-Если ты создаёшь новый проект:
+## Новый проект
 
+```bash
+git init
 ```
 
-git init
+## Клонирование репозитория
 
-Если работаешь с уже существующим (что чаще в компании):
-
+```bash
 git clone <url>
+```
 
 Пример:
 
+```bash
 git clone https://github.com/user/project.git
 ```
 
+---
+
 # 📌 3. Работа с файлами
 
-Добавление файлов в отслеживание:
+Добавление файлов:
 
-```
+```bash
 git add file.txt
 git add .
-
-Проверка состояния проекта:
-
-git status
-
-👉 Показывает:
-
-изменённые файлы
-добавленные
-неотслеживаемые
-
 ```
+
+Проверка состояния:
+
+```bash
+git status
+```
+
+---
+
 # 💾 4. Коммиты
 
 Создание коммита:
-```
+
+```bash
 git commit -m "описание изменений"
+```
 
-Быстрый коммит (для уже отслеживаемых файлов):
+Быстрый коммит:
 
+```bash
 git commit -am "сообщение"
+```
 
-Исправление последнего коммита:
+Изменить последний коммит:
 
+```bash
 git commit --amend
 ```
-# 🌿 5. Ветки (основа командной работы)
 
-Создание ветки:
+---
 
+# 🌿 5. Ветки (ОСНОВА)
+
+## Получить список веток с GitHub
+
+```bash
+git fetch origin
 ```
-git branch feature/login
 
-Переключение:
+## Посмотреть ветки
 
-git switch feature/login
-
-Создать и сразу перейти:
-
-git switch -c feature/login
-
-Просмотр веток:
-
+```bash
 git branch
 git branch -a
+```
 
-Удаление ветки:
+## Переключиться на ветку (если есть удалённая)
 
+```bash
+git switch dev
+```
+
+## Создать новую ветку
+
+```bash
+git switch -c feature/login
+```
+
+## Удалить ветку
+
+```bash
 git branch -d feature/login
 ```
+
+---
+
 # 🔄 6. Слияние веток (merge)
 
-Объединение веток:
+Перейти в целевую ветку:
 
+```bash
+git switch main
 ```
-git merge branch_name
 
-Если возник конфликт:
+Обновить её:
 
+```bash
+git pull origin main
+```
+
+Слить ветку:
+
+```bash
+git merge dev
+```
+
+Отправить:
+
+```bash
+git push origin main
+```
+
+---
+
+# ⚠️ Конфликты
+
+Проверка:
+
+```bash
 git status
+```
 
 После исправления:
 
+```bash
 git add .
 git commit
 ```
 
+---
+
 # 🌍 7. Работа с удалённым репозиторием
 
-Добавить удалённый репозиторий:
+Добавить remote:
 
-```
+```bash
 git remote add origin <url>
+```
 
-Посмотреть подключённые репозитории:
+Посмотреть:
 
+```bash
 git remote -v
+```
 
 Отправить изменения:
 
+```bash
 git push origin main
+```
 
-Первый push (с привязкой ветки):
+Первый push:
 
+```bash
 git push -u origin main
+```
 
 Получить изменения:
 
+```bash
 git pull
+```
 
-Только скачать изменения:
+Скачать без слияния:
 
+```bash
 git fetch
 ```
 
-# 🧬 8. Rebase (важно в командах)
+---
 
-Обновить ветку поверх main:
+# 🧬 8. Rebase
 
-```
+Обновить ветку:
+
+```bash
 git rebase main
+```
 
-Интерактивный режим (редактирование истории):
+Интерактивный режим:
 
+```bash
 git rebase -i HEAD~3
-
-👉 Позволяет:
-
-объединять коммиты
-менять порядок
-редактировать сообщения
 ```
 
-# 🔍 9. История изменений
+---
 
-Просмотр полной истории:
-```
+# 🔍 9. История
+
+```bash
 git log
-
-Компактный и наглядный вид:
-
 git log --oneline --graph --all
 ```
 
+---
+
 # 🧹 10. Отмена изменений
 
-Отменить изменения в файле:
+Отменить изменения:
 
-```
+```bash
 git restore file.txt
+```
 
-Убрать файл из staging:
+Убрать из staging:
 
+```bash
 git reset file.txt
+```
 
-Полный сброс (осторожно ❗):
+Полный сброс (ОПАСНО):
 
+```bash
 git reset --hard
 ```
 
-# 🧪 11. Временное сохранение (stash)
+---
 
-Сохранить изменения:
+# 🧪 11. Stash
 
-```
+Сохранить:
+
+```bash
 git stash
+```
 
-Вернуть обратно:
+Вернуть:
 
+```bash
 git stash pop
+```
 
-Список stash:
+Список:
 
+```bash
 git stash list
 ```
-# 🏷 12. Теги (релизы)
 
-Создать тег:
+---
 
-```
+# 🏷 12. Теги
+
+Создать:
+
+```bash
 git tag v1.0
+```
 
-Отправить тег:
+Отправить:
 
+```bash
 git push origin v1.0
 ```
 
+---
+
 # 🧩 13. Полезные команды
 
-Разница между изменениями:
+Разница:
 
-```
+```bash
 git diff
 git diff --staged
+```
 
 Кто изменял файл:
 
+```bash
 git blame file.txt
+```
 
-Удаление файла:
+Удалить файл:
 
+```bash
 git rm file.txt
+```
 
-Переименование:
+Переименовать:
 
+```bash
 git mv old.txt new.txt
 ```
+
+---
+
+# 🚀 14. БАЗОВЫЙ WORKFLOW (как работать правильно)
+
+```bash
+# обновить main
+git switch main
+git pull origin main
+
+# создать ветку
+git switch -c feature/my-task
+
+# работа
+git add .
+git commit -m "сделал задачу"
+
+# отправка
+git push -u origin feature/my-task
+
+# обновить ветку
+git switch main
+git pull origin main
+git switch feature/my-task
+git merge main
+```
+
+---
+
+# 🧠 Главное запомнить
+
+* `fetch` — скачать изменения
+* `pull` — скачать + влить
+* `push` — отправить
+* всегда работай в ветках, не в main
+* перед началом — обновляй main
+
+---

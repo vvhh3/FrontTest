@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 const Front = () => {
     const [value, setValue] = useState()
     const [input, setInput] = useState("")
+    
     useEffect(() => {
         axios.get("http://localhost:5000/api/value")
             .then(res => setValue(res.data.value))
