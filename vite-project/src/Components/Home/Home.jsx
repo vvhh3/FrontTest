@@ -12,26 +12,26 @@ const Home = () => {
 
     return (
         <div>
-            <div className="bg-red-500 text-white p-4 ">
+            <div className="bg-black text-white p-4 dark:bg-white dark:text-black ">
                 TEST
             </div>
-            <div className='bg-gray-300 w-20 mb-2'>
-                <Link to="/" className="no-underline text-gray-900 p-4 transition-colors duration-300 hover:text-blue-600">Home</Link>
+            <div className='bg-black w-20 m-2 dark:border-zinc-600 dark:w-20 dark:m-2  dark:bg-white'>
+                <Link to="/" className="no-underline text-white p-4 transition-colors  dark:text-black duration-300 hover:text-red-600">Home</Link>
             </div>
-            <div className='bg-gray-300 w-20 mb-2'>
-                <Link to="/Zustand" className="no-underline text-gray-900 p-4 transition-colors duration-300 hover:text-blue-600">Zustand</Link>
+            <div className='bg-black w-20 m-2 dark:border-zinc-600 dark:w-20 dark:m-2  dark:bg-white'>
+                <Link to="/Zustand" className="no-underline text-white p-4 transition-colors duration-300  dark:text-black hover:text-red-600">Zustand</Link>
             </div>
-            <div className='bg-gray-300 w-20 mb-2'>
-                <Link to="/RTK" className="no-underline text-gray-900 p-4 transition-colors duration-300 hover:text-blue-600">RTK</Link>
+            <div className='bg-black w-20 m-2 dark:border-zinc-600 dark:w-20 dark:m-2  dark:bg-white'>
+                <Link to="/RTK" className="no-underline text-white p-4 transition-colors duration-300 dark:text-black hover:text-red-600">RTK</Link>
             </div>
-            <div className='bg-gray-300 w-20 mb-2'>
-                <Link to="/Redis" className="no-underline text-gray-900 p-4 transition-colors duration-300 hover:text-blue-600">Front</Link>
+            <div className='bg-black  w-20 m-2 dark:border-zinc-600 dark:w-20 dark:m-2  dark:bg-white'>
+                <Link to="/Redis" className="no-underline text-white p-4 transition-colors  dark:text-black duration-300 hover:text-red-600">Front</Link>
             </div>
-            <div className='bg-gray-300 w-20 mb-2'>
-                <Link to="/JWT" className="no-underline text-gray-900 p-4 transition-colors duration-300 hover:text-blue-600">JWT</Link>
+            <div className='bg-black w-20 m-2 dark:border-zinc-600 dark:w-20 dark:m-2  dark:bg-white'>
+                <Link to="/JWT" className="no-underline text-white p-4 transition-colors duration-300 dark:text-black hover:text-red-600">JWT</Link>
             </div>
-            <div className='bg-gray-300 w-20 mb-2'>
-                <Link to="/Ref" className="no-underline text-gray-900 p-4 transition-colors duration-300 hover:text-blue-600">Ref</Link>
+            <div className='bg-black w-20 m-2 dark:border-zinc-600 dark:w-20 dark:m-2  dark:bg-white '>
+                <Link to="/Ref" className="no-underline text-white p-4 transition-colors duration-300 dark:text-black hover:text-red-600">Ref</Link>
             </div>
         </div>
     );

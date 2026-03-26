@@ -10,7 +10,7 @@ const ReduxTk = () => {
 
     return (
         <div>
-            <div className='bg-red-500 text-white p-4'>
+            <div className="bg-black text-white p-4 dark:bg-white dark:text-black ">
                 Redux ToolKit
             </div>
             <div className='bg-gray-300 w-20 m-2'>

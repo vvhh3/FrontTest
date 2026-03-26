@@ -21,7 +21,7 @@ const Zustand = () => {
     
     return (
         <div>
-            <div className='bg-red-500 text-white text-[20px] p-4'>
+            <div className="bg-black text-white p-4 dark:bg-white dark:text-black ">
                 Zustand
             </div>
             <div className='bg-gray-300 w-20 mb-2 mt-2'>

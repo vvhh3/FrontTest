@@ -1,19 +1,19 @@
-import  { useRef,useState } from 'react';
+import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const UseRef = () => {
     let ref = useRef(0)
-    
-    
+
+
     const [startTime, setStartTime] = useState(null);
     const [now, setNow] = useState(null);
     const intervalRef = useRef(null);
-    
+
     const handleCleck = () => {
         ref.current = ref.current + 1
         alert(`Вы нажали кнопку ${ref.current}`)
     }
-    
+
     function handleStart() {
         setStartTime(Date.now());
         setNow(Date.now());
@@ -35,7 +35,7 @@ const UseRef = () => {
 
     return (
         <div>
-            <div className='bg-red-500 text-white text-[20px] p-4'>
+            <div className="bg-black text-white p-4 dark:bg-white dark:text-black ">
                 useRef
             </div>
             <div className='bg-gray-300 w-20 mb-2 mt-2'>

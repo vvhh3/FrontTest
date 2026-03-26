@@ -28,7 +28,7 @@ const JWT = () => {
 
   return (
     <div>
-      <div className='bg-red-500 p-4 text-white'>
+      <div className="bg-black text-white p-4 dark:bg-white dark:text-black ">
         JWT
       </div>
       <div className='bg-gray-300 w-20 m-2'>
