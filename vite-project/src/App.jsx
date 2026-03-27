@@ -10,7 +10,6 @@ import ReduxTk from './Components/ReduxToolKit/ReduxTk';
 import Front from './Components/Redis/Front';
 import JWT from './Components/JWT/JWT';
 import UseRef from './Components/hooks/UseRef';
-// import UseContext from './Components/hooks/UseContext';
 import { useTheme } from './Components/hooks/UseContext';
 
 function App() {

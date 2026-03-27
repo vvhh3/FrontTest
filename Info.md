@@ -65,3 +65,44 @@ Redis (Remote Dictionary Server) — это высокопроизводител
 
     Векторная база данных: Хранение и поиск эмбеддингов для приложений на базе ИИ
 
+
+
+# useContext
+
+Мини-Гайд Как Писать useContext С Нуля
+
+1. Создай контекст
+const ThemeContext = createContext(null);
+2. Создай провайдер
+
+```
+function ThemeProvider({ children }) {
+  const [theme, setTheme] = useState("light");
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+  };
+
+  return (
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+}
+```
+3. Создай свой хук
+```
+function useTheme() {
+  return useContext(ThemeContext);
+}
+```
+4. Оберни приложение
+```
+<ThemeProvider>
+  <App />
+</ThemeProvider>
+```
+5. Используй в любом дочернем компоненте
+```
+const { theme, toggleTheme } = useTheme();
+```
