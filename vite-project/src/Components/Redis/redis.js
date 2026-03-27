@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import { createClient } from "redis";
 
+const PORT = 5001;
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -12,7 +13,7 @@ await redis.connect();
 
 // Получить значение
 app.get("/api/value", async (req, res) => {
-  const value = await redis.get("value") || "Пусто";
+  const value = await redis.get("value") || "Ничего не найдено";
   res.json({ value });
 });
 
@@ -28,4 +29,4 @@ app.delete("/api/value", async (req, res) => {
   res.json({ status: "OK", message:"Успешно удаленно"});
 });
 
-app.listen(5000, () => console.log("Server running on http://localhost:5000"));
+app.listen(PORT, () => console.log(`Redis server running on http://localhost:${PORT}`));
