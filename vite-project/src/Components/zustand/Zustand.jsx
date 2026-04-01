@@ -24,19 +24,19 @@ const Zustand = () => {
             <div className="bg-black text-white p-4 dark:bg-white dark:text-black ">
                 Zustand
             </div>
-            <div className='bg-gray-300 w-20 mb-2 mt-2'>
-                <Link to="/" className="no-underline text-gray-900 p-4 transition-colors duration-300 hover:text-blue-600">Home</Link>
+            <div className='bg-black  transition-colors rounded-xl m-2 p-4 dark:border-zinc-600 dark:m-2 hover:bg-red-950 dark:hover:bg-red-200  dark:bg-white'>
+                <Link to="/" className="no-underline text-white p-4 transition-colors  dark:text-black duration-300 hover:text-red-600 flex justify-between">Home</Link>
             </div>
-            <p></p>
             <Controls />
             <BearCounter />
+
             <div className=" grid w-1/5 grid-cols-3 gap-4 mt-4">
-                <div className='flex bg-sky-300 justify-start'>01</div>
+                <div className='flex bg-sky-300 justify-center'>01</div>
                 <div className='flex justify-center bg-sky-300'>02</div>
-                <div className='flex justify-end bg-sky-300'>03</div>
-                <div className='flex justify-start bg-sky-300'>04</div>
+                <div className='flex justify-center bg-sky-300'>03</div>
+                <div className='flex justify-center bg-sky-300'>04</div>
                 <div className='flex justify-center bg-sky-300'>05</div>
-                <div className='flex justify-end bg-sky-300'>06</div>
+                <div className='flex justify-center bg-sky-300'>06</div>
             </div>
         </div>
     );

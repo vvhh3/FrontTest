@@ -13,8 +13,8 @@ const ReduxTk = () => {
             <div className="bg-black text-white p-4 dark:bg-white dark:text-black ">
                 Redux ToolKit
             </div>
-            <div className='bg-gray-300 w-20 m-2'>
-                <Link to="/" className="no-underline text-gray-900 p-4 transition-colors duration-300 hover:text-blue-600">Home</Link>
+            <div className='bg-black  transition-colors rounded-xl m-2 p-4 dark:border-zinc-600 dark:m-2 hover:bg-red-950 dark:hover:bg-red-200  dark:bg-white'>
+                <Link to="/" className="no-underline text-white p-4 transition-colors  dark:text-black duration-300 hover:text-red-600 flex justify-between">Home</Link>
             </div>
             <h1 className='font-bold text-xl'>{bears} bears</h1>
             <h1 className='font-bold text-xl'>{fish} fish</h1>

@@ -38,8 +38,8 @@ const UseRef = () => {
             <div className="bg-black text-white p-4 dark:bg-white dark:text-black ">
                 useRef
             </div>
-            <div className='bg-gray-300 w-20 mb-2 mt-2'>
-                <Link to="/" className="no-underline text-gray-900 p-4 transition-colors duration-300 hover:text-blue-600">Home</Link>
+            <div className='bg-black  transition-colors rounded-xl m-2 p-4 dark:border-zinc-600 dark:m-2 hover:bg-red-950 dark:hover:bg-red-200  dark:bg-white'>
+                <Link to="/" className="no-underline text-white p-4 transition-colors  dark:text-black duration-300 hover:text-red-600 flex justify-between">Home</Link>
             </div>
             <button onClick={handleCleck} className='bg-gray-400 p-1 m-1 duration-500 hover:bg-red-500'>+ 1 ref</button>
 

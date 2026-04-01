@@ -39,13 +39,8 @@ const Front = () => {
       <div className="bg-black p-4 text-white dark:bg-white dark:text-black">
         Redis
       </div>
-      <div className="m-2 w-20 bg-gray-300">
-        <Link
-          to="/"
-          className="p-4 text-gray-900 no-underline transition-colors duration-300 hover:text-blue-600"
-        >
-          Home
-        </Link>
+      <div className='bg-black  transition-colors rounded-xl m-2 p-4 dark:border-zinc-600 dark:m-2 hover:bg-red-950 dark:hover:bg-red-200  dark:bg-white'>
+        <Link to="/" className="no-underline text-white p-4 transition-colors  dark:text-black duration-300 hover:text-red-600 flex justify-between">Home</Link>
       </div>
       <h1>React + Node + Redis</h1>
       <p>
