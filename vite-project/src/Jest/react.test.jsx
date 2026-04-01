@@ -1,6 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import UseRef from "../Components/hooks/UseRef";
 import { MemoryRouter } from "react-router-dom";
+
 test("кнопка клика работает", () => {
    render(
     <MemoryRouter>
@@ -12,5 +13,4 @@ test("кнопка клика работает", () => {
 
   fireEvent.click(button);
 
-  // alert проверить сложнее — смотри ниже
 });

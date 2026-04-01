@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 const UseRef = () => {
     let ref = useRef(0)
 
-
     const [startTime, setStartTime] = useState(null);
     const [now, setNow] = useState(null);
     const intervalRef = useRef(null);
