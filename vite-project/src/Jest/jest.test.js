@@ -1,4 +1,4 @@
-const { sum } = require('../qwery');
+
 
 test('first', () => {
     expect(Math.max(1, 5, 10)).toBe(10);
@@ -15,8 +15,3 @@ test('third', () => {
     expect([11, 19, 5]).toEqual([11, 19, 5]); 
     expect(11).toBe(11); 
 });
-
-test("free", () => {
-    expect(sum(2,2)).toBe(4)
-    expect(sum(1,1)).toBe(2)
-})

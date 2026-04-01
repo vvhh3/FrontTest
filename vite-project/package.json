@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test": "jest",
+    "test": "vitest",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -18,10 +18,11 @@
     "axios": "^1.13.6",
     "bcryptjs": "^3.0.3",
     "cors": "^2.8.6",
+    "D": "^1.0.0",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
     "lucide-react": "^1.7.0",
-    "react": "^19.2.4", 
+    "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.13.1",
@@ -31,13 +32,10 @@
     "zustand": "^5.0.12"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "^5.0.2",
     "@eslint/js": "^9.39.4",
-    "@storybook/addon-a11y": "^10.3.3",
-    "@storybook/addon-docs": "^10.3.3",
-    "@storybook/addon-onboarding": "^10.3.3",
-    "@storybook/addon-vitest": "^10.3.3",
     "@storybook/react-vite": "^10.3.3",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.0",
@@ -46,12 +44,12 @@
     "eslint": "^9.39.4",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.5.2",
-    "eslint-plugin-storybook": "^10.3.3",
     "globals": "^17.4.0",
     "jest": "^30.3.0",
+    "jsdom": "^29.0.1",
     "playwright": "^1.58.2",
     "prop-types": "^15.8.1",
     "vite": "^8.0.0",
-    "vitest": "^4.1.1"
+    "vitest": "^4.1.2"
   }
 }
