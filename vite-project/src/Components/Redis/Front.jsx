@@ -50,7 +50,7 @@ const Front = () => {
         value={input}
         onChange={(e) => setInput(e.target.value)}
         placeholder="Введите что-то"
-        className="border-1 border-cyan-600"
+        className="border border-cyan-600"
       />
 
       <button onClick={saveValue} className="ml-2 bg-gray-300 p-1">
