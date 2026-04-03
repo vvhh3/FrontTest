@@ -11,6 +11,7 @@ import Front from './Components/Redis/Front';
 import JWT from './Components/JWT/JWT';
 import UseRef from './Components/hooks/UseRef';
 import { useTheme } from './Components/hooks/UseContext';
+import EventAndSafe from './Components/EventAndSafe/EventAndSafe';
 
 function App() {
   const { theme, toggleTheme } = useTheme()
@@ -38,6 +39,7 @@ function App() {
           <Route path='/Redis' element={<Front />} />
           <Route path='/JWT' element={<JWT />} />
           <Route path='/Ref' element={<UseRef />} />
+          <Route path='/EventAndSafe' element={<EventAndSafe />} />
         </Routes>
       </div>
     </BrowserRouter>

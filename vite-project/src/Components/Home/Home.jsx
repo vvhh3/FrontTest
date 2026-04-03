@@ -46,6 +46,11 @@ const Home = () => {
                         Ref <Cookie />
                     </Link>
                 </div>
+                <div className='bg-black  transition-colors rounded-xl m-2 p-4 dark:border-zinc-600  dark:m-2  hover:bg-red-950 dark:hover:bg-red-200 dark:bg-white '>
+                    <Link to="/EventAndSafe" className="no-underline text-white p-4 transition-colors duration-300 dark:text-black hover:text-red-600  flex justify-between">
+                        EventAndSafe <Cookie />
+                    </Link>
+                </div>
             </div>
         </div>
     );
