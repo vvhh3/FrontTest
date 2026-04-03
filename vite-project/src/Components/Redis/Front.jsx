@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-
+import NavButton from "../Home/NavButton";
+import { House} from 'lucide-react'
 const API_URL = "http://localhost:5001/api/value";
 
 const Front = () => {
@@ -39,9 +40,7 @@ const Front = () => {
       <div className="bg-black p-4 text-white dark:bg-white dark:text-black">
         Redis
       </div>
-      <div className='bg-black  transition-colors rounded-xl m-2 p-4 dark:border-zinc-600 dark:m-2 hover:bg-red-950 dark:hover:bg-red-200  dark:bg-white'>
-        <Link to="/" className="no-underline text-white p-4 transition-colors  dark:text-black duration-300 hover:text-red-600 flex justify-between">Home</Link>
-      </div>
+      <NavButton title={'Home'} path={'/'} icon={<House />} />
       <h1>React + Node + Redis</h1>
       <p>
         Сохранённое значение: <b>{value}</b>

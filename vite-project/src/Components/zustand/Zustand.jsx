@@ -1,7 +1,8 @@
 import React from 'react';
 import { useBearStore } from './useBearStore';
 import { Link } from 'react-router-dom';
-
+import { House } from 'lucide-react'
+import NavButton from '../Home/NavButton';
 const Zustand = () => {
     function BearCounter() {
         const bears = useBearStore((state) => state.bears)
@@ -18,15 +19,13 @@ const Zustand = () => {
             <button onClick={removeAllBears} className='m-1 bg-gray-300 p-1 duration-500 hover:bg-blue-400'>removeAllBears</button>
         </>)
     }
-    
+
     return (
         <div>
             <div className="bg-black text-white p-4 dark:bg-white dark:text-black ">
                 Zustand
             </div>
-            <div className='bg-black  transition-colors rounded-xl m-2 p-4 dark:border-zinc-600 dark:m-2 hover:bg-red-950 dark:hover:bg-red-200  dark:bg-white'>
-                <Link to="/" className="no-underline text-white p-4 transition-colors  dark:text-black duration-300 hover:text-red-600 flex justify-between">Home</Link>
-            </div>
+            <NavButton title={'Home'} path={'/'} icon={<House />} />
             <Controls />
             <BearCounter />
 

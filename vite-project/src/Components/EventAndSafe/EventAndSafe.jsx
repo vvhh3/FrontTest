@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-
+import NavButton from '../Home/NavButton';
+import { House} from 'lucide-react'
 const EventAndSafe = () => {
     const [msg, setMsg] = useState([])
     const [input, setInput] = useState('')
@@ -8,13 +9,17 @@ const EventAndSafe = () => {
     const handleClick = async (msg) => {
         setFlag(true)
         await new Promise(resolve => setTimeout(resolve, 2000))
-        setMsg(prev => [...prev, {text: msg, id: Date.now()}])
+        setMsg(prev => [...prev, { text: msg, id: Date.now() }])
         setFlag(false)
         alert("Сообщение отправлено!")
     }
 
     return (
         <div>
+            <div className="bg-black text-white p-4 dark:bg-white dark:text-black ">
+                XZ
+            </div>
+            <NavButton title={'Home'} path={'/'} icon={<House />} />
             <p>Отправить сообщение</p>
             <div className='flex'>
                 <input value={input} placeholder='сообщение' onChange={(e) => setInput(e.target.value)} className='border m-2  p-2 w-30' />

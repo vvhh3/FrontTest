@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { plusBear, minusBear, removeAllBear } from '../ReduxToolKit/bearSlice';
 import { plusFish, minusFish, removeAllFish } from './fishSlice';
 import { Link } from 'react-router-dom';
+import NavButton from '../Home/NavButton';
+import { House} from 'lucide-react'
 const ReduxTk = () => {
     const bears = useSelector((state) => state.bear.bears);
     const fish = useSelector((state) => state.fish.fish);
@@ -13,9 +15,8 @@ const ReduxTk = () => {
             <div className="bg-black text-white p-4 dark:bg-white dark:text-black ">
                 Redux ToolKit
             </div>
-            <div className='bg-black  transition-colors rounded-xl m-2 p-4 dark:border-zinc-600 dark:m-2 hover:bg-red-950 dark:hover:bg-red-200  dark:bg-white'>
-                <Link to="/" className="no-underline text-white p-4 transition-colors  dark:text-black duration-300 hover:text-red-600 flex justify-between">Home</Link>
-            </div>
+            <NavButton title={'Home'} path={'/'} icon={<House />} />
+
             <h1 className='font-bold text-xl'>{bears} bears</h1>
             <h1 className='font-bold text-xl'>{fish} fish</h1>
             <h1 className='font-bold text-xl'>bear</h1>

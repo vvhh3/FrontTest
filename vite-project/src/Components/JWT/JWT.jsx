@@ -2,6 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { House } from 'lucide-react'
+import NavButton from "../Home/NavButton";
+
 const JWT = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -33,11 +35,7 @@ const JWT = () => {
         JWT
       </div>
       <div className="w-full">
-        <div className='bg-black  transition-colors rounded-xl m-2 p-4 dark:border-zinc-600 dark:m-2 hover:bg-red-950 dark:hover:bg-red-200  dark:bg-white'>
-          <Link to="/" className='no-underline text-white p-4 transition-colors  dark:text-black duration-300 hover:text-red-600 flex justify-between'>
-            Home <House />
-          </Link>
-        </div>
+        <NavButton title={'Home'} path={'/'} icon={<House />} />
         <section className="flex w-full items-center justify-center flex-col p-4">
           <input placeholder="Username"
             className="border-2 w-[50vh] border-pink-800 p-4 m-4 rounded-2xl dark:bg-white dark:text-black"
