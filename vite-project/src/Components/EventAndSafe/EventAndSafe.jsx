@@ -8,7 +8,7 @@ const EventAndSafe = () => {
 
     const handleClick = async (msg) => {
         setFlag(true)
-        await new Promise(resolve => setTimeout(resolve, 2000))
+        await new Promise(r => setTimeout(r, 2000))
         setMsg(prev => [...prev, { text: msg, id: Date.now() }])
         setFlag(false)
         alert("Сообщение отправлено!")
