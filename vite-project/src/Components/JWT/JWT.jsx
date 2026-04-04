@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { House } from 'lucide-react'
 import NavButton from "../Home/NavButton";
+import Title from "../Home/Title";
 
 const JWT = () => {
   const [username, setUsername] = useState("");
@@ -31,9 +32,7 @@ const JWT = () => {
 
   return (
     <div className="w-full">
-      <div className="bg-black text-white p-4 dark:bg-white dark:text-black ">
-        JWT
-      </div>
+      <Title name={"JWT"}/>
       <div className="w-full">
         <NavButton title={'Home'} path={'/'} icon={<House />} />
         <section className="flex w-full items-center justify-center flex-col p-4">

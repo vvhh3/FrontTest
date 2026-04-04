@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import NavButton from '../Home/NavButton';
 import { House} from 'lucide-react'
+import Title from '../Home/Title';
 const EventAndSafe = () => {
     const [msg, setMsg] = useState([])
     const [input, setInput] = useState('')
@@ -16,9 +17,7 @@ const EventAndSafe = () => {
 
     return (
         <div>
-            <div className="bg-black text-white p-4 dark:bg-white dark:text-black ">
-                XZ
-            </div>
+            <Title name={'XZ'}/>
             <NavButton title={'Home'} path={'/'} icon={<House />} />
             <p>Отправить сообщение</p>
             <div className='flex'>

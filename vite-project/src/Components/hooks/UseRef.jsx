@@ -2,6 +2,9 @@ import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { House} from 'lucide-react'
 import NavButton from '../Home/NavButton';
+
+import Title from '../Home/Title';
+
 const UseRef = () => {
     let ref = useRef(0)
 
@@ -35,9 +38,7 @@ const UseRef = () => {
 
     return (
         <div>
-            <div className="bg-black text-white p-4 dark:bg-white dark:text-black ">
-                useRef
-            </div>
+            <Title name={'useRef'}/>
             <NavButton title={'Home'} path={'/'} icon={<House />} />
             <button onClick={handleCleck} className='bg-gray-400 p-1 m-1 duration-500 hover:bg-red-500'>+ 1 ref</button>
 

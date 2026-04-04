@@ -5,6 +5,7 @@ import { plusFish, minusFish, removeAllFish } from './fishSlice';
 import { Link } from 'react-router-dom';
 import NavButton from '../Home/NavButton';
 import { House} from 'lucide-react'
+import Title from '../Home/Title';
 const ReduxTk = () => {
     const bears = useSelector((state) => state.bear.bears);
     const fish = useSelector((state) => state.fish.fish);
@@ -12,9 +13,7 @@ const ReduxTk = () => {
 
     return (
         <div>
-            <div className="bg-black text-white p-4 dark:bg-white dark:text-black ">
-                Redux ToolKit
-            </div>
+            <Title name={"Redux ToolKit"}/>
             <NavButton title={'Home'} path={'/'} icon={<House />} />
 
             <h1 className='font-bold text-xl'>{bears} bears</h1>

@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import NavButton from "../Home/NavButton";
 import { House} from 'lucide-react'
+import Title from "../Home/Title";
 const API_URL = "http://localhost:5001/api/value";
 
 const Front = () => {
@@ -37,9 +38,7 @@ const Front = () => {
 
   return (
     <div>
-      <div className="bg-black p-4 text-white dark:bg-white dark:text-black">
-        Redis
-      </div>
+      <Title name={"Redis"}/>
       <NavButton title={'Home'} path={'/'} icon={<House />} />
       <h1>React + Node + Redis</h1>
       <p>
