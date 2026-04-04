@@ -3,6 +3,7 @@ import { useBearStore } from './useBearStore';
 import { Link } from 'react-router-dom';
 import { House } from 'lucide-react'
 import NavButton from '../Home/NavButton';
+import Title from '../Home/Title';
 const Zustand = () => {
     function BearCounter() {
         const bears = useBearStore((state) => state.bears)
@@ -22,9 +23,7 @@ const Zustand = () => {
 
     return (
         <div>
-            <div className="bg-black text-white p-4 dark:bg-white dark:text-black ">
-                Zustand
-            </div>
+            <Title name={"Zustand"} />
             <NavButton title={'Home'} path={'/'} icon={<House />} />
             <Controls />
             <BearCounter />

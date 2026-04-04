@@ -4,6 +4,7 @@ import { useBearStore } from '../zustand/useBearStore';
 import { House, DatabaseZap, Package, HardDrive, Braces, Cookie,CalendarCheck } from 'lucide-react'
 import NavButton from './NavButton';
 
+import Title from './Title';
 const Home = () => {
 
     const GetBear = () => {
@@ -13,9 +14,7 @@ const Home = () => {
 
     return (
         <div className="font-mono">
-            <div className='bg-black text-white p-4 dark:bg-white dark:text-black'>
-                TEST
-            </div>
+        <Title name={"Home"}/>
             <nav className='text-xl flex flex-col items-center justify-center'>
                 <div className='w-1/2'>
                     <NavButton title={'Home'} path={'/'} icon={<House />} />
