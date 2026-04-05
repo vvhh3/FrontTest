@@ -25,9 +25,9 @@ const Weather = () => {
                 {
                     params: {
                         q: city,
-                        appid: API,
-                        units: "metric",
-                        lang: "ru",
+                        appid: API, //API ключь
+                        units: "metric", // система измерения
+                        lang: "ru", //язык
                     },
                 }
             );
