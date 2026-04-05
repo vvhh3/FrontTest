@@ -14,6 +14,12 @@ import { useTheme } from './Components/hooks/UseContext';
 import EventAndSafe from './Components/EventAndSafe/EventAndSafe';
 import Weather from './Components/Weather/Weather';
 
+// TODO:
+
+// переделать dark под эти стили
+
+// dark:bg-gray-800 dark:border dark:border-gray-300 dark:text-white
+
 function App() {
   const { theme, toggleTheme } = useTheme()
 

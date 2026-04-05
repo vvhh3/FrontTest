@@ -75,7 +75,7 @@ const Weather = () => {
                 <button
                     onClick={() => getForecast(city)}
                     className="bg-black text-white p-3 rounded-2xl w-full mb-5 
-                            dark:bg-white dark:text-black hover:scale-101 transition"
+                            dark:bg-gray-800 dark:border dark:border-gray-300 dark:text-white hover:scale-101 transition"
                     disabled={flag}
                 >
                     {flag ? "Идет загрузка..." : "Узнать погоду"}
