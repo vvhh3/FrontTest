@@ -24,6 +24,7 @@ const Home = () => {
                     <NavButton title={'JWT'} path={'/JWT'} icon={<Braces/>}/>
                     <NavButton title={'Ref'} path={'/Ref'} icon={<Cookie/>}/>
                     <NavButton title={'EventAndSafe'} path={'/EventAndSafe'} icon={<CalendarCheck/>}/>
+                    <NavButton title={'Weather'} path={'/Weather'} icon={<CalendarCheck/>}/>
                 </div>
             </nav>
         </div>

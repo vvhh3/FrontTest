@@ -12,6 +12,7 @@ import JWT from './Components/JWT/JWT';
 import UseRef from './Components/hooks/UseRef';
 import { useTheme } from './Components/hooks/UseContext';
 import EventAndSafe from './Components/EventAndSafe/EventAndSafe';
+import Weather from './Components/Weather/Weather';
 
 function App() {
   const { theme, toggleTheme } = useTheme()
@@ -40,6 +41,7 @@ function App() {
           <Route path='/JWT' element={<JWT />} />
           <Route path='/Ref' element={<UseRef />} />
           <Route path='/EventAndSafe' element={<EventAndSafe />} />
+          <Route path='/Weather' element={<Weather />} />
         </Routes>
       </div>
     </BrowserRouter>

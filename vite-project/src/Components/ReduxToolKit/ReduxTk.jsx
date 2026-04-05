@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { plusBear, minusBear, removeAllBear } from '../ReduxToolKit/bearSlice';
 import { plusFish, minusFish, removeAllFish } from './fishSlice';
-import { Link } from 'react-router-dom';
+
 import NavButton from '../Home/NavButton';
 import { House} from 'lucide-react'
 import Title from '../Home/Title';
