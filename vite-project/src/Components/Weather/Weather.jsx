@@ -9,6 +9,8 @@ const API = "47b66ac0480d8d087a3f12b3855cec67";
 
 const Weather = () => {
     const [forecast, setForecast] = useState([]);
+    const [cityName, setCityName] = useState('')
+
     const [city, setCity] = useState("");
 
     const [flag, setFlag] = useState(false);
@@ -31,6 +33,8 @@ const Weather = () => {
                     },
                 }
             );
+
+            setCityName(res.data.city.name)
             setForecast(res.data.list);
             setFlag(false)
             setCity("")
@@ -81,6 +85,8 @@ const Weather = () => {
                     {flag ? "Идет загрузка..." : "Узнать погоду"}
                 </button>
 
+                <p className="text-lg">Погода в: {cityName}</p>
+                
                 <div className="grid gap-4">
                     {Object.entries(grouped).map(([date, items]) => {
                         const day = items.find((i) =>
