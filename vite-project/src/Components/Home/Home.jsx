@@ -25,6 +25,7 @@ const Home = () => {
                     <NavButton title={'Ref'} path={'/Ref'} icon={<Cookie/>}/>
                     <NavButton title={'EventAndSafe'} path={'/EventAndSafe'} icon={<CalendarCheck/>}/>
                     <NavButton title={'Weather'} path={'/Weather'} icon={<CalendarCheck/>}/>
+                    <NavButton title={'TansTackQuery'} path={'/TansTackQuery'} icon={<CalendarCheck/>}/>
                 </div>
             </nav>
         </div>
