@@ -83,6 +83,12 @@ const mutation = useMutation({
 });
 ```
 
+```
+useQuery Для чтения данных с сервера (GET-запросы)
+useMutation Для изменения данных (POST/PUT/DELETE)
+useQueryClient Для ручного управления кэшем (обновление, инвалидация)
+```
+
 🔹 3. useQueryClient
 
 👉 доступ к кешу
