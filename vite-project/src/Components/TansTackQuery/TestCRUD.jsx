@@ -8,8 +8,7 @@ const API = "https://dummyjson.com/posts";
 // ===== API функции =====
 const fetchPosts = async () => {
     const res = await axios.get(`${API}?limit=5`);
-    console.log("📦 Полученные данные:", res.data); // Для отладки
-    return res.data.posts; // ⚠️ Извлекаем массив posts!
+    return res.data.posts;
 }
 
 const addPost = async (title) => {

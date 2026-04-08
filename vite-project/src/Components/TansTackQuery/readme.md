@@ -31,7 +31,7 @@ useEffect(() => {
 нет retry
 нет loading/error норм
 нет синхронизации
-много boilerplate
+много шаблонного кода
 ```
 
 ✅ С TanStack Query:

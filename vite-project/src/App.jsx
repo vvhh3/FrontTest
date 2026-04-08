@@ -16,9 +16,6 @@ import Weather from './Components/Weather/Weather';
 import TansTackQuery from './Components/TansTackQuery/TansTackQuery';
 
 import {
-  useQuery,
-  useMutation,
-  useQueryClient,
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
