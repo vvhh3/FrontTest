@@ -21,6 +21,19 @@
 - Vue.js (ознакомиться, потыкать)
 - Postrge SQL (базово потыкать. просто чтобы понимать)
 
+Если коротко по приоритету для тебя:
+
+TanStack Query
+
+Vitest
+
+Playwright
+
+Storybook
+
+Zod
+
+Astro по интересу
 
 
 # JWT 
