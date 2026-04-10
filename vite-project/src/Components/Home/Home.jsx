@@ -7,11 +7,6 @@ import NavButton from './NavButton';
 import Title from './Title';
 const Home = () => {
 
-    const GetBear = () => {
-        const bear = useBearStore((state) => state.bears)
-        return <h1>Bear:{bear}</h1>
-    }
-
     return (
         <div className="font-mono">
         <Title name={"Home"}/>
