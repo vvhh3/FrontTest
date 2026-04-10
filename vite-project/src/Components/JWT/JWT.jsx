@@ -19,7 +19,7 @@ const JWT = () => {
     const res = await axios.post("http://localhost:5000/login", { username, password });
     localStorage.setItem("token", res.data.token);
     alert("Logged in!");
-    getProfile()
+    getProfile() // получить профиль
   };
 
   const getProfile = async () => {

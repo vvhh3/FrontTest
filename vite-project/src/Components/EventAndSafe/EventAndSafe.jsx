@@ -17,7 +17,7 @@ const EventAndSafe = () => {
 
     return (
         <div>
-            <Title name={'XZ'}/>
+            <Title name={'Не придумал'}/>
             <NavButton title={'Home'} path={'/'} icon={<House />} />
             <p>Отправить сообщение</p>
             <div className='flex'>
