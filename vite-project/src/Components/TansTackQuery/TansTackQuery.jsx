@@ -43,6 +43,7 @@ const TansTackQuery = () => {
 
     
     if (isError) return <p>❌ {error.message}</p>
+    
     return (
         <div>
             <Title name={"TansTack Query"} />
