@@ -19,11 +19,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
-// TODO:
 
-// переделать dark под эти стили
-
-// dark:bg-gray-800 dark:border dark:border-gray-300 dark:text-white
 const queryClient = new QueryClient()
 
 function App() {

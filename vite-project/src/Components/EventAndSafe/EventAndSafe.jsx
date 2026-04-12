@@ -17,6 +17,7 @@ const EventAndSafe = () => {
 
     return (
         <div>
+            
             <Title name={'Не придумал'}/>
             <NavButton title={'Home'} path={'/'} icon={<House />} />
             <p>Отправить сообщение</p>
@@ -28,6 +29,7 @@ const EventAndSafe = () => {
                     </button>
                 </div>
             </div>
+
             <p>История сообщений</p>
 
             {msg.map(p => (
