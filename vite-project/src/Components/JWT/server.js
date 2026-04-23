@@ -8,6 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+
 const SECRET = process.env.JWT_SECRET || "dev-jwt-secret-change-me";
 const users = [];
 

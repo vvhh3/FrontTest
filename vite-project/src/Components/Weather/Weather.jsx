@@ -96,8 +96,7 @@ const Weather = () => {
                         return (
                             <div
                                 key={date}
-                                className="bg-white dark:bg-gray-800 p-4 rounded-2xl shadow-md"
-                            >
+                                className="bg-white dark:bg-gray-800 p-4 rounded-2xl shadow-md">
                                 <h2 className="text-lg font-semibold mb-2">
                                     📅 {date}
                                 </h2>
