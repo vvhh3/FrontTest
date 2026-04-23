@@ -122,8 +122,7 @@ const TanStackCRUD = () => {
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     className="border p-2 flex-1 rounded dark:bg-gray-800 dark:border-gray-600"
-                    placeholder="Новый пост..."
-                />
+                    placeholder="Новый пост..." />
                 <button
                     onClick={() => {
                         if (!input.trim()) return;
@@ -131,8 +130,7 @@ const TanStackCRUD = () => {
                         setInput("");
                     }}
                     disabled={createMutation.isPending}
-                    className="bg-black text-white px-4 rounded disabled:opacity-50"
-                >
+                    className="bg-black text-white px-4 rounded disabled:opacity-50">
                     {createMutation.isPending ? "⏳" : "➕"}
                 </button>
             </div>
@@ -157,8 +155,7 @@ const TanStackCRUD = () => {
                             <button
                                 onClick={() => deleteMutation.mutate(post.id)}
                                 className="text-red-500 hover:text-red-700 ml-2"
-                                disabled={deleteMutation.isPending}
-                            >
+                                disabled={deleteMutation.isPending}>
                                 ❌
                             </button>
                         </li>
