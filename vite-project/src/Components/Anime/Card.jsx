@@ -54,7 +54,6 @@ export default function Card() {
 
     return (
         <section ref={rootRef} className="min-h-screen bg-[#0b0f19] text-white px-8 py-20 overflow-hidden relative">
-
             <div className="max-w-6xl mx-auto relative z-10">
                 <h1 className="hero-title  text-5xl font-bold mb-6">
                     Frontend Developer
@@ -65,13 +64,15 @@ export default function Card() {
                 </p>
 
                 <div className="flex gap-4 mb-14">
-                    <a href="https://github.com/vvhh3?tab=overview&from=2026-04-01&to=2026-04-26" target="_blank">
-                        <button className="hero-btn cursor-pointer px-6 py-3 rounded-xl bg-white text-black">
+                    <a href="https://github.com/vvhh3?tab=overview&from=2026-04-01&to=2026-04-26" target="_blank" rel="noopener noreferrer">
+                        <button className="hero-btn cursor-pointer px-6 py-3 rounded-xl bg-white text-black hover:scale-105 hover:duration-500">
                             Смотреть проекты
                         </button>
                     </a>
-                    <a href="https://t.me/ia_botik" target="_blank">
-                        <button className="hero-btn px-6 py-3 rounded-xl border border-white/20 cursor-pointer">
+                    <a href="https://t.me/ia_botik" target="_blank" rel="noopener noreferrer">
+                        {/* noopener - защита от доступа к window.opener */}
+                        {/* noreferrer - скрывает источник + защита */}
+                        <button className="hero-btn px-6 py-3 rounded-xl bg-white text-black cursor-pointer hover:scale-105 hover:duration-500">
                             Связаться
                         </button>
                     </a>
@@ -79,15 +80,15 @@ export default function Card() {
 
                 <div className="flex gap-3 mb-10 flex-wrap">
                     {["React", "TypeScript", "Redux", "Tailwind", "Web3", "Docker"].map((t) => (
-                        <span key={t} className="tech-badge px-4  py-2 rounded-full bg-white/10">
+                        <span key={t} className="tech-badge px-4  py-2 rounded-full bg-white/10 hover:bg-red-500/20 hover:duration-500">
                             {t}
                         </span>
                     ))}
                 </div>
-
+                    
                 <div className="grid md:grid-cols-3 gap-6">
                     {["DeFi Dashboard", "Weather API App", "Telegram Bot"].map((p) => (
-                        <div key={p} className="project-card  p-6 rounded-2xl bg-white/10 border border-white/10">
+                        <div key={p} className="project-card  p-6 rounded-2xl bg-white/10 border border-white/10 hover:bg-red-500/20 hover:duration-500">
                             <h3 className="text-xl d mb-3">{p}</h3>
                             <p className="text-white/60">
                                 крутой текст тут

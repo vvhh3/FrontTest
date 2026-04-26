@@ -4,7 +4,7 @@ import { House } from "lucide-react"
 import NavButton from "../Home/NavButton"
 import { useEffect, useRef } from "react";
 import Card from "./Card";
-import { Link } from "react-router-dom";
+
 const Anime = () => {
 
     const containerRef = useRef(null);
@@ -45,13 +45,13 @@ const Anime = () => {
         <>
             <Title name={"Anime"} />
             <NavButton title={'Home'} path={'/'} icon={<House />} />
+            <Card/>
 
             {/* <div ref={containerRef}>
                 <div className="card">Card 1</div>
                 <div className="card">Card 2</div>
                 <div className="card">Card 3</div>
             </div> */}
-            <Card/>
         </>
     )
 }
