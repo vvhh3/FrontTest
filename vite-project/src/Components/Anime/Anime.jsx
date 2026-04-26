@@ -1,4 +1,4 @@
-import { animate,stagger } from "animejs"
+import { animate, stagger } from "animejs"
 import Title from "../Home/Title"
 import { House } from "lucide-react"
 import NavButton from "../Home/NavButton"
@@ -11,10 +11,31 @@ const Anime = () => {
     useEffect(() => {
         animate(containerRef.current.querySelectorAll(".card"), {
             y: [40, 0],
+            // движение по оси Y (снизу вверх)
+            // 40 → старт (ниже), 0 → финальная позиция
             opacity: [0, 1],
-            delay: stagger(120),
+            // прозрачность
+            // 0 → полностью скрыт, 1 → полностью виден
+            delay: stagger(150), // делает появление элемнетов по очереди
+            // каждая следующая карточка появляется позже на 150мс
             duration: 700,
-            ease: "outQuad",
+            // длительность анимации (в миллисекундах)
+            loop: 0, // сколько раз повторяется анимация, либо true - бесконечно
+            ease: "linear", //Популярные: "linear" — ровно ,"inQuad" — разгон , "outQuad" — торможение, "inOutQuad" — плавно туда-сюда ,"outElastic" — пружина
+            // direction: "alternate",
+            // направление анимации
+            // "normal" — обычное
+            // "reverse" — в обратную сторону
+            // "alternate" — туда-обратно
+            begin: () => {
+                console.log("анимация началась");
+            },
+            // вызывается в начале анимации
+
+            complete: () => {
+                console.log("анимация закончилась");
+            },
+            // вызывается в конце анимации
         });
     }, []);
 
