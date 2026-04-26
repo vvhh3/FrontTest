@@ -14,7 +14,7 @@ import { useTheme } from './Components/hooks/UseContext';
 import EventAndSafe from './Components/EventAndSafe/EventAndSafe';
 import Weather from './Components/Weather/Weather';
 import TansTackQuery from './Components/TansTackQuery/TansTackQuery';
-
+import Anime from './Components/Anime/Anime';
 import {
   QueryClient,
   QueryClientProvider,
@@ -53,6 +53,7 @@ function App() {
             <Route path='/EventAndSafe' element={<EventAndSafe />} />
             <Route path='/Weather' element={<Weather />} />
             <Route path='/TansTackQuery' element={<TansTackQuery />} />
+            <Route path='/Anime' element={<Anime />} />
           </Routes>
         </div>
       </BrowserRouter>
