@@ -48,10 +48,20 @@ export default function Card() {
                 ease: "outElastic", // эффект пружины
             });
 
-            animate(".threed", {
+            animate(".one", {
                 rotate: "360deg",
                 duration: 400,
                 easing: "outQuad",
+            });
+            animate(".two", {
+                rotateY: "360deg",
+                duration: 400,
+                easing: "outQuad"
+            })
+            animate(".three", {
+                scale: [1, 0.9, 1.08, 1],
+                duration: 400,
+                ease: "outElastic(1, .5)",
             });
         });
 
@@ -60,7 +70,14 @@ export default function Card() {
 
     return (
         <section ref={rootRef} className="min-h-screen bg-[#0b0f19] text-white px-8 py-20 overflow-hidden relative">
-            <div className="threed w-[150px] h-[150px] bg-red-500"></div>
+            <div className="flex gap-20 mb-10">
+
+                <div className="one w-25 h-25 bg-red-500"></div>
+                <div className="two w-25 h-25 bg-red-500"></div>
+                <div className="three w-25 h-25 bg-red-500"></div>
+                <div className="four w-25 h-25 bg-red-500"></div>
+            </div>
+
             <div className="max-w-6xl mx-auto relative z-10">
                 <h1 className="hero-title  text-5xl font-bold mb-6">
                     Frontend Developer
@@ -92,7 +109,7 @@ export default function Card() {
                         </span>
                     ))}
                 </div>
-                    
+
                 <div className="grid md:grid-cols-3 gap-6">
                     {["DeFi Dashboard", "Weather API App", "Telegram Bot"].map((p) => (
                         <div key={p} className="project-card  p-6 rounded-2xl bg-white/10 border border-white/10 hover:bg-red-500/20 hover:duration-500">
@@ -104,6 +121,6 @@ export default function Card() {
                     ))}
                 </div>
             </div>
-        </section>
+        </section >
     );
 }
