@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
-const NavButton = ({ title, path, icon }) => {
+const NavButton =memo( ({ title, path, icon }) => {
     return (
         <div>
             <div className='bg-black group cursor-pointer transition-colors rounded-xl m-2 p-4
@@ -11,6 +11,6 @@ const NavButton = ({ title, path, icon }) => {
             </div>
         </div>
     );
-}
+})
 
 export default NavButton;

@@ -1,5 +1,6 @@
+import { memo } from "react"
 
-const Title = ({ name }) => {
+const Title = memo(({ name }) => {
 
     return (
         <>
@@ -8,6 +9,6 @@ const Title = ({ name }) => {
             </div>
         </>
     )
-}
+})
 
 export default Title

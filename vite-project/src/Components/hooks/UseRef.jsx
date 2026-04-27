@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useCallback,  useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { House} from 'lucide-react'
 import NavButton from '../Home/NavButton';
@@ -17,15 +17,16 @@ const UseRef = () => {
         alert(`Вы нажали кнопку ${ref.current}`)
     }
 
-    function handleStart() {
+    const handleStart = useCallback(() => {
         setStartTime(Date.now());
         setNow(Date.now());
 
         clearInterval(intervalRef.current);
         intervalRef.current = setInterval(() => {
             setNow(Date.now());
+            console.log(intervalRef.current);
         }, 10);
-    }
+    }, []);
 
     function handleStop() {
         clearInterval(intervalRef.current);
