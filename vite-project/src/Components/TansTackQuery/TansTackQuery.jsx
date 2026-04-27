@@ -3,7 +3,7 @@ import NavButton from '../Home/NavButton';
 import { House } from 'lucide-react'
 import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
-import TanStackCRUD from './TestCRUD';
+import TestCRUD from './TestCRUD';
 
 const fetchData = async () => {
     const res = await axios.get(
@@ -78,7 +78,7 @@ const TansTackQuery = () => {
 
                 </div>
             </>}
-            <TanStackCRUD/>
+            <TestCRUD/>
         </div>
     );
 }

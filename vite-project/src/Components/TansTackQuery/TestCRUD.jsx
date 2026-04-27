@@ -27,7 +27,7 @@ const deletePost = async (id) => {
 }
 
 // ===== COMPONENT =====
-const TanStackCRUD = () => {
+const TestCRUD = () => {
     const queryClient = useQueryClient();
     const [input, setInput] = useState("");
 
@@ -166,4 +166,4 @@ const TanStackCRUD = () => {
     );
 };
 
-export default TanStackCRUD;
+export default TestCRUD;
