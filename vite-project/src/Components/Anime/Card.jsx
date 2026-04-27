@@ -47,6 +47,12 @@ export default function Card() {
                 duration: 500,
                 ease: "outElastic", // эффект пружины
             });
+
+            animate(".threed", {
+                rotate: "360deg",
+                duration: 400,
+                easing: "outQuad",
+            });
         });
 
         return () => scopeRef.current.revert();
@@ -54,6 +60,7 @@ export default function Card() {
 
     return (
         <section ref={rootRef} className="min-h-screen bg-[#0b0f19] text-white px-8 py-20 overflow-hidden relative">
+            <div className="threed w-[150px] h-[150px] bg-red-500"></div>
             <div className="max-w-6xl mx-auto relative z-10">
                 <h1 className="hero-title  text-5xl font-bold mb-6">
                     Frontend Developer

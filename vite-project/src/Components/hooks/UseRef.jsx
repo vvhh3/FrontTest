@@ -1,16 +1,16 @@
-import { useCallback,  useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useCallback,  useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { House} from 'lucide-react'
-import NavButton from '../Home/NavButton';
+import NavButton from '../Home/NavButton'
 
-import Title from '../Home/Title';
+import Title from '../Home/Title'
 
 const UseRef = () => {
     let ref = useRef(0)
 
-    const [startTime, setStartTime] = useState(null);
-    const [now, setNow] = useState(null);
-    const intervalRef = useRef(null);
+    const [startTime, setStartTime] = useState(null)
+    const [now, setNow] = useState(null)
+    const intervalRef = useRef(null)
 
     const handleCleck = () => {
         ref.current = ref.current + 1
@@ -18,15 +18,15 @@ const UseRef = () => {
     }
 
     const handleStart = useCallback(() => {
-        setStartTime(Date.now());
-        setNow(Date.now());
+        setStartTime(Date.now())
+        setNow(Date.now())
 
         clearInterval(intervalRef.current);
         intervalRef.current = setInterval(() => {
-            setNow(Date.now());
-            console.log(intervalRef.current);
-        }, 10);
-    }, []);
+            setNow(Date.now())
+            console.log(intervalRef.current)
+        }, 10)
+    }, [])
 
     function handleStop() {
         clearInterval(intervalRef.current);
