@@ -52,7 +52,7 @@ export default function Card() {
                 rotate: "360deg",
                 duration: 400,
                 easing: "outQuad",
-            });
+            })
             animate(".two", {
                 rotateY: "360deg",
                 duration: 400,
@@ -62,7 +62,14 @@ export default function Card() {
                 scale: [1, 0.9, 1.08, 1],
                 duration: 400,
                 ease: "outElastic(1, .5)",
-            });
+            })
+            animate(".four", {
+                rotateX: [0, 220],
+                rotateY: [0, 220],
+                scale: [1, 1.5, 1],
+                duration: 2500,
+                ease: "inOutExpo",
+            })
         });
 
         return () => scopeRef.current.revert();
@@ -72,10 +79,10 @@ export default function Card() {
         <section ref={rootRef} className="min-h-screen bg-[#0b0f19] text-white px-8 py-20 overflow-hidden relative">
             <div className="flex gap-20 mb-10">
 
-                <div className="one w-25 h-25 bg-red-500"></div>
-                <div className="two w-25 h-25 bg-red-500"></div>
-                <div className="three w-25 h-25 bg-red-500"></div>
-                <div className="four w-25 h-25 bg-red-500"></div>
+                <div className="one w-25 h-25 bg-red-500 rounded-2xl"></div>
+                <div className="two w-25 h-25 bg-red-500 rounded-2xl"></div>
+                <div className="three w-25 h-25 bg-red-500 rounded-2xl"></div>
+                <div className="four w-25 h-25 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl"></div>
             </div>
 
             <div className="max-w-6xl mx-auto relative z-10">
