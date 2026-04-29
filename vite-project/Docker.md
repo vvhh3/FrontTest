@@ -15,3 +15,8 @@
 
 Запустить с docker hub
 - docker run -p 5173:5173 vvhh/fronttest:latest
+
+Обновить image c docker hub
+- docker build -t fronttest .
+- docker tag fronttest vvhh3/fronttest:latest
+- docker push vvhh3/fronttest:latest

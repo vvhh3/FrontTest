@@ -6,14 +6,14 @@ import { House } from "lucide-react";
 import Title from "../Home/Title";
 import { useQuery } from "@tanstack/react-query";
 
-const API = "47b66ac0480d8d087a3f12b3855cec67";
+const API = "47b66ac0480d8d087a3f12b3855cec67"
 
 const Weather = () => {
-    const [city, setCity] = useState('');
-    const [searchCity, setSearchCity] = useState(null);
+    const [city, setCity] = useState('')
+    const [searchCity, setSearchCity] = useState(null)
 
     const getForecast = async ({ queryKey }) => {
-        const [, cityName] = queryKey;
+        const [, cityName] = queryKey
 
         const res = await axios.get(
             "https://api.openweathermap.org/data/2.5/forecast",
@@ -27,7 +27,7 @@ const Weather = () => {
             }
         );
 
-        return res.data;
+        return res.data
     };
 
     const {
@@ -44,30 +44,30 @@ const Weather = () => {
     });
 
     const groupByDay = (list = []) => {
-        const days = {};
+        const days = {}
 
         list.forEach((item) => {
-            const date = item.dt_txt.split(" ")[0];
+            const date = item.dt_txt.split(" ")[0]
 
             if (!days[date]) {
-                days[date] = [];
+                days[date] = []
             }
 
-            days[date].push(item);
+            days[date].push(item)
         });
 
-        return days;
+        return days
     };
 
-    const grouped = groupByDay(data?.list);
+    const grouped = groupByDay(data?.list)
 
     const handleSearch = (city) => {
         if (!city.trim()) {
-            alert("Введите город");
-            return;
+            alert("Введите город")
+            return
         }
 
-        setSearchCity(city);
+        setSearchCity(city)
     };
 
     return (
@@ -137,12 +137,12 @@ const Weather = () => {
                                     </div>
                                 </div>
                             </div>
-                        );
+                        )
                     })}
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}
 
 export default Weather;
