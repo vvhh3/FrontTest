@@ -1,49 +1,49 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 
-import NavButton from '../Home/NavButton';
-import { House } from 'lucide-react'
-import Title from '../Home/Title';
+import NavButton from "../Home/NavButton";
+import { House } from "lucide-react";
+import Title from "../Home/Title";
+import { useQuery } from "@tanstack/react-query";
 
 const API = "47b66ac0480d8d087a3f12b3855cec67";
 
 const Weather = () => {
-    const [forecast, setForecast] = useState([]);
-    const [cityName, setCityName] = useState('')
+    const [city, setCity] = useState('');
+    const [searchCity, setSearchCity] = useState(null);
 
-    const [city, setCity] = useState("");
+    const getForecast = async ({ queryKey }) => {
+        const [, cityName] = queryKey;
 
-    const [flag, setFlag] = useState(false);
+        const res = await axios.get(
+            "https://api.openweathermap.org/data/2.5/forecast",
+            {
+                params: {
+                    q: cityName,
+                    appid: API,
+                    units: "metric",
+                    lang: "ru",
+                },
+            }
+        );
 
-    const getForecast = async (city) => {
-        if (!city) {
-            alert("Введите город");
-            return
-        }
-        try {
-            setFlag(true);
-            const res = await axios.get(
-                "https://api.openweathermap.org/data/2.5/forecast",
-                {
-                    params: {
-                        q: city,
-                        appid: API, //API ключ
-                        units: "metric", // система измерения
-                        lang: "ru", //язык
-                    },
-                }
-            );
-
-            setCityName(res.data.city.name)
-            setForecast(res.data.list);
-            setFlag(false)
-            setCity("")
-        } catch (e) {
-            console.log(e);
-        }
+        return res.data;
     };
 
-    const groupByDay = (list) => {
+    const {
+        data,
+        isLoading,
+        isError,
+        error,
+    } = useQuery({
+        queryKey: ["weather", searchCity],
+        queryFn: getForecast,
+        enabled: Boolean(searchCity),
+        staleTime: 1000 * 60,
+        refetchOnWindowFocus: false,
+    });
+
+    const groupByDay = (list = []) => {
         const days = {};
 
         list.forEach((item) => {
@@ -57,15 +57,25 @@ const Weather = () => {
         });
 
         return days;
-    }
+    };
 
-    const grouped = forecast ? groupByDay(forecast) : {};
+    const grouped = groupByDay(data?.list);
+
+    const handleSearch = (city) => {
+        if (!city.trim()) {
+            alert("Введите город");
+            return;
+        }
+
+        setSearchCity(city);
+    };
+
     return (
-        <div >
+        <div>
             <Title name={"Weather"} />
-            <NavButton title={'Home'} path={'/'} icon={<House />} />
-            <div className="m-3">
+            <NavButton title={"Home"} path={"/"} icon={<House />} />
 
+            <div className="m-3">
                 <h1 className="text-3xl font-bold mb-4 text-center">🌤 Погода</h1>
 
                 <input
@@ -73,30 +83,39 @@ const Weather = () => {
                     placeholder="Введите город..."
                     onChange={(e) => setCity(e.target.value)}
                     className="border-2 border-gray-300 p-3 rounded-2xl mb-3 w-full 
-                            dark:bg-gray-800 dark:border-white dark:text-white outline-none"
+                    dark:bg-gray-800 dark:border-white dark:text-white outline-none"
                 />
 
                 <button
-                    onClick={() => getForecast(city)}
+                    onClick={() => handleSearch(city)}
                     className="bg-black text-white p-3 rounded-2xl w-full mb-5 
-                            dark:bg-gray-800 dark:border dark:border-gray-300 dark:text-white hover:scale-101 transition"
-                    disabled={flag}
+                    dark:bg-gray-800 dark:border dark:border-gray-300 dark:text-white hover:scale-101 transition"
+                    disabled={isLoading}
                 >
-                    {flag ? "Идет загрузка..." : "Узнать погоду"}
+                    {isLoading ? "Идет загрузка..." : "Узнать погоду"}
                 </button>
 
-                <p className="text-lg">Погода в: {cityName}</p>
-                
+                {isError && (
+                    <p className="text-red-500 mb-3">
+                        Ошибка: {error.message}
+                    </p>
+                )}
+
+                {data && (
+                    <p className="text-lg">Погода в: {data.city.name}</p>
+                )}
+
                 <div className="grid gap-4">
                     {Object.entries(grouped).map(([date, items]) => {
-                        const day = items.find((i) =>
-                            i.dt_txt.includes("12:00:00")
-                        ) || items[0];
+                        const day =
+                            items.find((i) => i.dt_txt.includes("12:00:00")) ||
+                            items[0];
 
                         return (
                             <div
                                 key={date}
-                                className="bg-white dark:bg-gray-800 p-4 rounded-2xl shadow-md">
+                                className="bg-white dark:bg-gray-800 p-4 rounded-2xl shadow-md"
+                            >
                                 <h2 className="text-lg font-semibold mb-2">
                                     📅 {date}
                                 </h2>
