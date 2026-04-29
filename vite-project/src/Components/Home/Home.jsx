@@ -26,6 +26,7 @@ const Home = () => {
     const [idEdit, setIdEdit] = useState(null)
 
     return (
+        
         <div className="font-mono">
 
             <Title name={"Home"} />

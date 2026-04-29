@@ -6,14 +6,14 @@ import NavButton from "../Home/NavButton";
 import Title from "../Home/Title";
 
 const JWT = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [profile, setProfile] = useState(null);
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
+  const [profile, setProfile] = useState(null)
 
   const register = async () => {
-    await axios.post("http://localhost:5000/register", { username, password });
+    await axios.post("http://localhost:5000/register", { username, password })
     alert("Registered!");
-  };
+  }
 
   const login = async () => {
     const res = await axios.post("http://localhost:5000/login", { username, password });
