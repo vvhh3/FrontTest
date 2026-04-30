@@ -7,7 +7,7 @@ interface TestProps {
 }
 
 const Test = ({ title, onClick, count }: TestProps) => {
-    const [style,setStyle] = useState({})
+    const [style, setStyle] = useState({})
 
     const Click = (e: React.MouseEvent<HTMLButtonElement>) => {
         const react = e.currentTarget.getBoundingClientRect()
@@ -23,15 +23,18 @@ const Test = ({ title, onClick, count }: TestProps) => {
 
     return (
         <div>
-            <h1>{title}</h1>
-            <p>count: {count}</p>
-            <button onClick={onClick}>
-                Click me
-            </button>
+            <h1>Title: {title}</h1>
+            <div>
 
-            <button onClick={Click} 
-            style={style}
-            className="w-64 h-32 text-white rounded-xl">
+                <p>count: {count}</p>
+                <button onClick={onClick} className="bg-black text-white w-30 h-10 rounded-lg m-2">
+                    Click me
+                </button>
+            </div>
+
+            <button onClick={Click}
+                style={style}
+                className="w-64 h-32 text-white rounded-xl bg-black">
                 Click
             </button>
         </div>
