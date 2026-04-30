@@ -119,3 +119,194 @@ function useTheme() {
 ```
 const { theme, toggleTheme } = useTheme();
 ```
+
+# Event Loop и тд:
+
+JavaScript — ключевые механики (конспект)
+🔁 Event Loop (как работает асинхронность)
+
+JS однопоточный → выполняет код по очереди, но умеет обрабатывать асинхронные задачи через event loop.
+
+Очереди:
+
+1. Call Stack (синхронный код)
+2. Microtasks (Promise, async/await)
+3. Macrotasks (setTimeout, события)
+
+Пример:
+
+console.log("1");
+
+setTimeout(() => console.log("2"), 0);
+
+Promise.resolve().then(() => console.log("3"));
+
+console.log("4");
+
+Результат:
+
+1
+4
+3
+2
+
+Правило:
+
+Синхронный код → Microtasks → Macrotasks
+
+Важно понимать для:
+
+async/await
+fetch / axios
+React (рендеры, setState)
+debounce/throttle
+🔒 Замыкания (Closures)
+
+Функция запоминает переменные из своей области.
+
+function counter() {
+  let count = 0;
+
+  return () => {
+    count++;
+    console.log(count);
+  };
+}
+
+const c = counter();
+
+c(); // 1
+c(); // 2
+
+Используется в:
+
+React hooks
+обработчиках
+debounce/throttle
+приватных переменных
+
+⚠️ Важно:
+
+setCount(count + 1); // может быть баг
+
+Лучше:
+
+setCount(prev => prev + 1);
+🧬 Прототипы
+
+Все объекты в JS связаны через prototype chain.
+
+const obj = {};
+obj.toString(); // берётся из Object.prototype
+
+Пример:
+
+const animal = {
+  speak() {
+    console.log("sound");
+  },
+};
+
+const dog = Object.create(animal);
+
+dog.speak(); // работает
+
+Классы — это просто синтаксис:
+
+class User {
+  sayHi() {}
+}
+
+Методы лежат в:
+
+User.prototype
+
+Важно для:
+
+понимания массивов (map, filter)
+классов
+библиотек
+🎯 Контекст this
+
+this зависит от того, как вызвали функцию
+
+const user = {
+  name: "Matvei",
+  sayHi() {
+    console.log(this.name);
+  },
+};
+
+user.sayHi(); // Matvei
+
+Но:
+
+const fn = user.sayHi;
+fn(); // undefined
+
+Стрелочные функции:
+
+const obj = {
+  name: "Matvei",
+  sayHi: () => console.log(this.name),
+};
+
+👉 this не тот
+
+Правило:
+
+обычные функции → свой this
+стрелочные → берут this снаружи
+
+В React:
+
+чаще стрелки
+но методы объектов → обычные функции
+🔍 Regex (регулярные выражения)
+
+Шаблоны для работы со строками.
+
+Проверка:
+
+/\d/.test("123"); // true
+
+Поиск:
+
+"price 100".match(/\d+/g); // ["100"]
+
+Замена:
+
+"hello   world".replace(/\s+/g, " ");
+
+Пример email:
+
+/^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+Основные символы:
+
+\d — цифра
+\w — буква/цифра
+\s — пробел
++  — 1 или больше
+*  — 0 или больше
+?  — необязательный
+[] — набор
+|  — или
+^  — начало
+$  — конец
+g  — все совпадения
+i  — без регистра
+
+Используется в:
+
+формах
+валидации
+фильтрах
+поиске
+🧩 Связь с фронтом
+Механика	Где используешь
+Event Loop	async/await, API, UI
+Замыкания	React hooks
+Прототипы	объекты, массивы
+this	методы, callbacks
+Regex	формы, фильтры
