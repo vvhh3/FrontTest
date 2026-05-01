@@ -40,6 +40,7 @@ const Home = () => {
                     <NavButton title={'Weather'} path={'/Weather'} icon={<Cloud />} />
                     <NavButton title={'TansTackQuery'} path={'/TansTackQuery'} icon={<Layers />} />
                     <NavButton title={'Anime'} path={'/Anime'} icon={<Dog />} />
+                    <NavButton title={'GitHub'} path={'/GitHub'} icon={<Dog />} />
                 </div>
             </nav>
         </div>
