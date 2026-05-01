@@ -5,7 +5,6 @@ import NavButton from "../Home/NavButton"
 import axios from "axios"
 
 const token = import.meta.env.VITE_GITHUB_TOKEN
-
 const GitHub = () => {
     const [repos, setRepos] = useState([])
 
@@ -22,6 +21,7 @@ const GitHub = () => {
 
     const getAllRepos = async () => {
         try {
+            console.log("token", token)
             const res = await axios.get("https://api.github.com/user/repos", {
                 headers: {
                     Authorization: `Bearer ${token}`,
