@@ -20,7 +20,7 @@ import {
   QueryClientProvider,
 } from '@tanstack/react-query'
 import GitHub from './Components/GitHub/GitHub';
-
+import AI from "./Components/AI/AI"
 
 const queryClient = new QueryClient()
 
@@ -57,6 +57,7 @@ function App() {
             <Route path='/TansTackQuery' element={<TansTackQuery />} />
             <Route path='/Anime' element={<Anime />} />
             <Route path='/GitHub' element={<GitHub />} />
+            <Route path='/AI' element={<AI />} />
           </Routes>
         </div>
       </BrowserRouter>
