@@ -6,7 +6,7 @@ export default function Chat() {
     const [input, setInput] = useState("")
     const [isLoading, setIsLoading] = useState(false)
     const [response, setResponse] = useState([])
-    const [model,setModel] = useState("")
+    const [model, setModel] = useState("")
 
     const sendMessage = async () => {
         try {
@@ -16,9 +16,9 @@ export default function Chat() {
                 message: input,
                 model: model
             })
-            setResponse([...response,res.data.answer])
+            setResponse([...response, res.data.answer])
             setIsLoading(false)
-            console.log(res.data.answer)
+            console.log(res.data)
             setInput("")
         } catch (e) {
             console.log(e)
@@ -39,6 +39,7 @@ export default function Chat() {
                             </div>
                         ))}
 
+                    {isLoading && <div className='m-3'>Думаю...</div>}
                     </div>
                 )}
 
