@@ -15,11 +15,11 @@ const client = new OpenAI({
 });
 
 app.post("/api/chat", async (req, res) => {
-    const { message } = req.body;
-
+    const { message, model } = req.body;
+    
     try {
         const response = await client.chat.completions.create({
-            model: "poolside/laguna-xs.2:free",
+            model: model,
             messages: [
                 {
                     role: "user",

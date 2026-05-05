@@ -31,7 +31,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
 
       <BrowserRouter>
-        <div className="min-h-screen bg-white text-black transition-colors duration-300 dark:bg-zinc-900 dark:text-white">
+        <div className=" bg-white text-black duration-300 dark:bg-zinc-900 dark:text-white">
           <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
             <p className="text-sm text-zinc-500 dark:text-zinc-400">
               Текущая тема: <b>{theme}</b>
