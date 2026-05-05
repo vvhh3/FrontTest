@@ -11,6 +11,7 @@ export default function Chat() {
     const sendMessage = async () => {
         try {
             setIsLoading(true)
+            console.log("input:", input)
             const res = await axios.post("http://localhost:5000/api/chat", {
                 message: input,
                 model: model
@@ -32,7 +33,7 @@ export default function Chat() {
                 {response && (
                     <div className='w-1/2'>
                         {response.map(r => (
-                            <div className='m-3'>
+                            <div className='m-3' key={r.key}>
                                 <h2>Мой Ответ:</h2>
                                 <p>{r}</p>
                             </div>
