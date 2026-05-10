@@ -69,7 +69,6 @@ export default function Input({ input, model, setModel, setInput, onSend, isLoad
             ? 'bg-zinc-700 text-zinc-500 cursor-not-allowed'
             : 'bg-white text-black hover:bg-zinc-200'
           }`}
-        aria-label="Send message"
       >
         <ArrowUp />
       </button>

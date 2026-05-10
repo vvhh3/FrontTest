@@ -6,6 +6,7 @@ import axios from 'axios'
 import Chat from './Chat'
 
 const AI = () => {
+    // https://openrouter.ai/models?max_price=0
     return (
         <div>
             <Title name={"AI"} />

@@ -16,7 +16,6 @@ const client = new OpenAI({
 
 app.post("/api/chat", async (req, res) => {
     const { message, model } = req.body;
-    
     try {
         const response = await client.chat.completions.create({
             model: model,

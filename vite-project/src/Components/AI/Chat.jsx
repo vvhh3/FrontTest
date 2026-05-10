@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import Input from './Input'
 import axios from 'axios'
+import Markdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+import rehypeHighlight from "rehype-highlight"
+
 
 export default function Chat() {
     const [input, setInput] = useState("")
@@ -25,21 +29,23 @@ export default function Chat() {
             setIsLoading(false)
         }
     }
-
+    // node ./src/Components/AI/server.js
     return (
         <div className='flex min-h-[70vh]'>
             <div className='mt-auto flex-col flex w-full items-center justify-center'>
 
                 {response && (
                     <div className='w-1/2'>
+
                         {response.map(r => (
-                            <div className='m-3' key={r.key}>
+                            <div key={r}>
                                 <h2>Мой Ответ:</h2>
-                                <p>{r}</p>
+                                <Markdown rehypePlugins={remarkGfm} rehypePlugins={[rehypeHighlight]}>{r}</Markdown>
                             </div>
                         ))}
 
-                    {isLoading && <div className='m-3'>Думаю...</div>}
+
+                        {isLoading && <div >Думаю...</div>}
                     </div>
                 )}
 
