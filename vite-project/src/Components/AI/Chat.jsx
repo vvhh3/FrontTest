@@ -38,7 +38,7 @@ export default function Chat() {
                     <div className='w-1/2'>
 
                         {response.map(r => (
-                            <div key={r}>
+                            <div key={r} className='text-white rounded-3xl bg-zinc-900 p-5'>
                                 <h2>Мой Ответ:</h2>
                                 <Markdown rehypePlugins={remarkGfm} rehypePlugins={[rehypeHighlight]}>{r}</Markdown>
                             </div>

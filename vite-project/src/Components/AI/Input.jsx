@@ -24,6 +24,9 @@ export default function Input({ input, model, setModel, setInput, onSend, isLoad
   }, [])
 
   const handleKeyDown = (e) => {
+    if(!model.trim() ){
+      return
+    } 
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault()
       onSend()
