@@ -44,7 +44,6 @@ export default function Chat() {
                             </div>
                         ))}
 
-
                         {isLoading && <div >Думаю...</div>}
                     </div>
                 )}
