@@ -37,7 +37,7 @@ export default function Input({ input, model, setModel, setInput, onSend, isLoad
     <div className="div-anime m-5 flex w-1/2 items-end gap-3 rounded-3xl border border-zinc-700 bg-zinc-900 px-4 py-3 shadow-lg shadow-black/20">
 
       <div className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition hover:bg-zinc-700 hover:text-white">
-        <Bot className='text-white' />
+        <Bot className='text-white'/>
         <select
           value={model}
           onChange={(e) => setModel(e.target.value)}
