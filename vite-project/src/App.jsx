@@ -54,6 +54,7 @@ function App() {
             <Route path='/Anime' element={<Anime />} />
             <Route path='/GitHub' element={<GitHub />} />
             <Route path='/AI' element={<AI />} />
+            
           </Routes>
         </div>
       </BrowserRouter>
