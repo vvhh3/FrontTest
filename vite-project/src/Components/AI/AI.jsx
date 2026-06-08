@@ -1,4 +1,8 @@
 import { useState } from "react";
+import Chat from "./Chat"
+import NavButton from "../Home/NavButton";
+import Title from "../Home/Title";
+import { House } from "lucide-react";
 
 const styles = `
   @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Manrope:wght@400;500;600;700&display=swap');
@@ -207,8 +211,8 @@ const styles = `
 const NAV_LINKS = ["Услуги", "Преимущества", "Кейсы", "Этапы", "FAQ", "Контакты"];
 
 const STATS = [
-  { icon: "📁", color: "rgba(59,130,246,0.15)", num: "150+",   label: "Выполненных проектов" },
-  { icon: "⭐", color: "rgba(139,92,246,0.15)", num: "8 лет",  label: "Опыта в веб-разработке" },
+  { icon: "📁", color: "rgba(59,130,246,0.15)", num: "150+", label: "Выполненных проектов" },
+  { icon: "⭐", color: "rgba(139,92,246,0.15)", num: "8 лет", label: "Опыта в веб-разработке" },
   { icon: "🚀", color: "rgba(16,185,129,0.15)", num: "6000 ₽", label: "Стоимость сайта под ключ" },
   { icon: "⚡", color: "rgba(249,115,22,0.15)", num: "1 день", label: "Минимальный срок запуска" },
 ];
@@ -241,17 +245,17 @@ const SERVICES = [
 ];
 
 const WHY = [
-  { icon: "🚚", title: "Запуск от 1 дня",     desc: "Быстрый старт без лишних задержек." },
-  { icon: "🛡️", title: "Гарантия качества",   desc: "Делаем сайты, которыми гордимся." },
-  { icon: "🎧", title: "Поддержка 24/7",       desc: "Всегда на связи и готовы помочь." },
-  { icon: "📊", title: "Результат",             desc: "Приводим клиентов и увеличиваем прибыль." },
-  { icon: "💰", title: "Честные цены",          desc: "Без скрытых платежей и переплат." },
+  { icon: "🚚", title: "Запуск от 1 дня", desc: "Быстрый старт без лишних задержек." },
+  { icon: "🛡️", title: "Гарантия качества", desc: "Делаем сайты, которыми гордимся." },
+  { icon: "🎧", title: "Поддержка 24/7", desc: "Всегда на связи и готовы помочь." },
+  { icon: "📊", title: "Результат", desc: "Приводим клиентов и увеличиваем прибыль." },
+  { icon: "💰", title: "Честные цены", desc: "Без скрытых платежей и переплат." },
 ];
 
 const CASES = [
   { emoji: "🏗️", bg: "linear-gradient(135deg,#1a2a4a,#0f1a2e)", tag: "Строительство", title: "Строительство домов под ключ", traffic: "+320%", leads: "85" },
-  { emoji: "🏠", bg: "linear-gradient(135deg,#1a2a3a,#0f1820)", tag: "Ремонт квартир", title: "Ремонт квартир в Москве",        traffic: "+210%", leads: "62" },
-  { emoji: "🏭", bg: "linear-gradient(135deg,#1e1a2a,#100f1e)", tag: "Производство",   title: "Производство металлоконструкций", traffic: "+430%", leads: "74" },
+  { emoji: "🏠", bg: "linear-gradient(135deg,#1a2a3a,#0f1820)", tag: "Ремонт квартир", title: "Ремонт квартир в Москве", traffic: "+210%", leads: "62" },
+  { emoji: "🏭", bg: "linear-gradient(135deg,#1e1a2a,#100f1e)", tag: "Производство", title: "Производство металлоконструкций", traffic: "+430%", leads: "74" },
 ];
 
 function ServiceCard({ icon, bg, name, desc, features, price }) {
@@ -292,9 +296,12 @@ export default function AI() {
 
   return (
     <div className="wp">
-      <style>{styles}</style>
+      <Title name={"AI"} />
+      <NavButton title={'Home'} path={'/'} icon={<House />} />
+      <Chat />
 
-      {/* NAV */}
+      {/* <style>{styles}</style>
+
       <nav className="wp-nav">
         <div className="wp-logo">WEB<span>PRO</span></div>
         <ul className="wp-nav-links">
@@ -306,7 +313,6 @@ export default function AI() {
         </div>
       </nav>
 
-      {/* HERO */}
       <div className="wp-hero">
         <div className="wp-badge">Создание сайтов и продвижение</div>
         <h1 className="wp-h1">
@@ -336,7 +342,6 @@ export default function AI() {
         </div>
       </div>
 
-      {/* STATS */}
       <div className="wp-stats">
         <div className="wp-stats-grid">
           {STATS.map(s => (
@@ -351,7 +356,6 @@ export default function AI() {
         </div>
       </div>
 
-      {/* SERVICES */}
       <section className="wp-section wp-services">
         <div className="wp-container">
           <div className="wp-section-label">Что мы делаем</div>
@@ -363,7 +367,6 @@ export default function AI() {
         </div>
       </section>
 
-      {/* WHY */}
       <section className="wp-section wp-why">
         <div className="wp-container">
           <div className="wp-section-label">Наши плюсы</div>
@@ -380,7 +383,6 @@ export default function AI() {
         </div>
       </section>
 
-      {/* CASES */}
       <section className="wp-section wp-cases">
         <div className="wp-container">
           <div className="wp-section-label">Портфолио</div>
@@ -392,7 +394,6 @@ export default function AI() {
         </div>
       </section>
 
-      {/* CTA */}
       <div className="wp-cta-wrap">
         <div className="wp-cta">
           <div className="wp-cta-title">Готовы начать проект?</div>
@@ -403,7 +404,6 @@ export default function AI() {
         </div>
       </div>
 
-      {/* FOOTER */}
       <footer className="wp-footer">
         <div className="wp-footer-grid">
           <div>
@@ -448,7 +448,7 @@ export default function AI() {
           <span>© 2026 WEBPRO. Все права защищены.</span>
           <a href="#">Политика конфиденциальности</a>
         </div>
-      </footer>
+      </footer> */}
     </div>
   );
 }
