@@ -299,7 +299,17 @@ export default function AI() {
       <Title name={"AI"} />
       <NavButton title={'Home'} path={'/'} icon={<House />} />
       <Chat />
-
+      <iframe
+        style={{ border: 'none', width: '614px', height: '244px' }}
+        frameBorder="0"
+        allow="clipboard-write"
+        width="614"
+        height="244"
+        src="https://music.yandex.ru/iframe/album/42282692/track/151848289"
+        title="Yandex Music player"
+      >
+        Слушайте <a href="https://music.yandex.ru/album/42282692/track/151848289?utm_source=web&utm_medium=copy_link">Black flag</a> — <a href="https://music.yandex.ru/artist/18739419">lilsange</a> на Яндекс Музыке
+      </iframe>
       {/* <style>{styles}</style>
 
       <nav className="wp-nav">
