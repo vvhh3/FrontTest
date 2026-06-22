@@ -87,7 +87,7 @@ const TestCRUD = () => {
     if (isLoading) {
         return (
             <div className="p-4 text-center">
-                <p>⏳ Загрузка...</p>
+                <p>Загрузка...</p>
                 <button
                     onClick={() => refetch()}
                     className="mt-2 text-blue-500 underline"
@@ -104,9 +104,8 @@ const TestCRUD = () => {
                 <p className="text-red-500">❌ Ошибка: {error?.message}</p>
                 <button
                     onClick={() => refetch()}
-                    className="mt-2 bg-blue-500 text-white px-4 py-2 rounded"
-                >
-                    🔄 Повторить
+                    className="mt-2 bg-blue-500 text-white px-4 py-2 rounded">
+                    Повторить
                 </button>
             </div>
         );

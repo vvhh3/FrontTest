@@ -29,8 +29,10 @@ export default function Chat() {
             setIsLoading(false)
         }
     }
+    
     // node ./src/Components/AI/server.js
     return (
+        
         <div className='flex min-h-[70vh]'>
             <div className='mt-auto flex-col flex w-full items-center justify-center'>
 
