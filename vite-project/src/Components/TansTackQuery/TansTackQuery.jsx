@@ -16,17 +16,17 @@ const fetchData = async () => {
 
 const TansTackQuery = () => {
 
-    const { data, isLoading } = useQuery({
-      queryKey: ["todos", userId], //уникальный ключ запроса
-      queryFn: fetchTodos, //функция, которая делает запрос
-      enabled: !!userId, // пока userId пустой → запрос НЕ идёт
-      staleTime: 1000 * 60, // сколько данные считаются свежими
-      cacheTime: 1000 * 60 * 5, // сколько хранить кеш после ухода компонента
-      retry: 2, // сколько раз повторять при ошибке
-      refetchOnWindowFocus: true, //обновляет данные при возврате на вкладку
-      select: (data) => data.slice(0, 5), //изменяет данные перед тем как отдать в компонент
-      refetchInterval: 5000 //авто-обновление каждые 5 сек
-    })
+    // const { data, isLoading } = useQuery({
+    //   queryKey: ["todos", userId], //уникальный ключ запроса
+    //   queryFn: fetchTodos, //функция, которая делает запрос
+    //   enabled: !!userId, // пока userId пустой → запрос НЕ идёт
+    //   staleTime: 1000 * 60, // сколько данные считаются свежими
+    //   cacheTime: 1000 * 60 * 5, // сколько хранить кеш после ухода компонента
+    //   retry: 2, // сколько раз повторять при ошибке
+    //   refetchOnWindowFocus: true, //обновляет данные при возврате на вкладку
+    //   select: (data) => data.slice(0, 5), //изменяет данные перед тем как отдать в компонент
+    //   refetchInterval: 5000 //авто-обновление каждые 5 сек
+    // })
 
     const {
         data,
