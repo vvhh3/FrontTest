@@ -146,6 +146,7 @@ git merge dev
 git push origin main
 ```
 
+
 ---
 
 # ⚠️ Конфликты
