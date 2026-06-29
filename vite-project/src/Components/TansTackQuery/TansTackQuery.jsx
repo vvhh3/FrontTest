@@ -58,8 +58,7 @@ const TansTackQuery = () => {
                     <button
                         onClick={() => refetch()}
                         className="bg-black text-white p-3 rounded-2xl w-full mb-5 
-                    dark:bg-gray-800 dark:border dark:border-gray-300 dark:text-white hover:scale-101 transition"
-                    >
+                    dark:bg-gray-800 dark:border dark:border-gray-300 dark:text-white hover:scale-101 transition" >
                         🔄 Обновить
                     </button>
                     {isFetching && <p className="text-sm">🔄 Обновляем в фоне...</p>}
