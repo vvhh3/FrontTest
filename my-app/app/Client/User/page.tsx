@@ -1,4 +1,4 @@
-"use client"
+
 import Link from "next/link"
 
 export default function UserList() {
@@ -13,12 +13,11 @@ export default function UserList() {
             <Link href="/Client" className="text-blue-400 hover:text-blue-600">
                 Обратно
             </Link>
-            <h1 className="text-2xl font-bold mb-4">Выбери пользователя:</h1>
+            <h1 className="w-fit text-2xl font-bold mb-4">Выбери пользователя:</h1>
             {users.map(u => (
-                <Link
-                    key={u.id}
+                <Link key={u.id}
                     href={`/Client/User/${u.id}`}
-                    className="block text-blue-400 hover:text-blue-600 mb-2" >
+                    className="flex flex-col w-fit text-blue-400 hover:text-blue-600 mb-2" >
                     {u.name}
                 </Link>
             ))}

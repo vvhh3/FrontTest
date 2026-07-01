@@ -1,4 +1,8 @@
+"use client"
+
 import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { use } from "react"
 
 interface Address {
     street: string
@@ -42,9 +46,13 @@ const users: User[] = [
     },
 ]
 
-export default async function UserPage({ params }: { params: Promise<{ userId: string }> }) {
-    const { userId } = await params
+const UserPage = ({ params }: { params: Promise <{ userId: string }> }) => {
+
+    const { userId } =  use (params)
     const user = users.find(u => u.id === Number(userId))
+    
+    const pathName = usePathname()
+    console.log("pathName", pathName)
 
     if (!user) return <div className="p-4 text-red-500">Пользователь не найден</div>
 
@@ -65,3 +73,5 @@ export default async function UserPage({ params }: { params: Promise<{ userId: s
         </div>
     )
 }
+
+export default UserPage
