@@ -16,6 +16,7 @@ interface User {
     addresses: Address[]
 }
 
+
 const users: User[] = [
     {
         id: 1,
@@ -48,7 +49,8 @@ const users: User[] = [
 
 const UserPage = ({ params }: { params: Promise <{ userId: string }> }) => {
 
-    const { userId } =  use (params)
+    const { userId } =  use(params)
+
     const user = users.find(u => u.id === Number(userId))
     
     const pathName = usePathname()

@@ -1,7 +1,14 @@
-
+import { Metadata } from "next"
 import Link from "next/link"
 
+
+export const metadata: Metadata ={
+    title: "User info",
+    description: "detailed user data"
+}
+
 export default function UserList() {
+
     const users = [
         { id: 1, name: "Matvei" },
         { id: 2, name: "Anna" },
