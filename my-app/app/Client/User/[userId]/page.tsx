@@ -44,7 +44,7 @@ const users: User[] = [
             { street: "Мира 8", city: "Казань" },
             { street: "Лесная 3", city: "Сочи" },
         ]
-    },
+    }
 ]
 
 const UserPage = ({ params }: { params: Promise <{ userId: string }> }) => {
