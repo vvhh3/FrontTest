@@ -1,23 +1,21 @@
 import React, { memo, useState } from "react"
 
 interface TestProps {
-    title: string
+    title: string 
     onClick: () => void
     count: number
 }
 
 const Test = ({ title, onClick, count }: TestProps) => {
     const [style, setStyle] = useState({})
-
+    
     const Click = (e: React.MouseEvent<HTMLButtonElement>) => {
         const react = e.currentTarget.getBoundingClientRect()
 
         const x = e.clientX - react.left
         const y = e.clientY - react.top
 
-        setStyle({
-            background: `radial-gradient(circle 20px at ${x}px ${y}px, black, orange)`
-        })
+        setStyle({background: `radial-gradient(circle 20px at ${x}px ${y}px, black, orange)`})
         console.log("X:", e.clientX, "Y:", e.clientY)
     }
 
