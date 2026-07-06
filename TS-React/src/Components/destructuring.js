@@ -1,23 +1,23 @@
-// let user = {};
-// [user.name, user.surname] = "John Smith".split(' ')
+let user = {};
+[user.name, user.surname] = "John Smith".split(' ')
+console.log(user.name)
+console.log(user.surname)
 
-// console.log(user.name)
-// console.log(user.surname)
 
-// console.log("John Smith".split(' ').reverse().toString())
+console.log("John Smith".split(' ').reverse().toString())
 
-// let {width, title,height  } = { title: "Menu", height: 200, width: 100 }
 
-// console.log(width)
-// console.log(height)
-// console.log(title)
+let {width, title,height  } = { title: "Menu", height: 200, width: 100 }
+console.log(width)
+console.log(height)
+console.log(title)
 
 
 let options = {
   title: "My menu",
   width: 123,
   items: ["Item1", "Item2"]
-};
+}
 
 function showMenu({
   title = "Untitled",
@@ -29,5 +29,4 @@ function showMenu({
   console.log( item1 );
   console.log( item2 ); 
 }
-
 showMenu(options);
