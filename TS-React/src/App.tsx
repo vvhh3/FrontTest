@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react'
 import Test from './Components/Test'
-import { Grid, Text, Button, Box, Flex, Kbd, CheckboxCards, Tabs, Separator } from "@radix-ui/themes";
+import { Grid, Text, Button, Box, Flex, Kbd, CheckboxCards, Tabs, Separator, Select, Progress, Popover } from "@radix-ui/themes";
 
 function App() {
   const [count, setCount] = useState<number>(0)
@@ -72,11 +72,96 @@ function App() {
       </Tabs.Root>
 
 
-      <Flex direction="column" gap="4">
-        <Separator orientation="horizontal" size="1" color="orange" style={{height: "3px"}}/>
-        <Separator orientation="horizontal" size="2" color="red" style={{height: "3px"}}/>
-        <Separator orientation="horizontal" size="3" color="yellow" style={{height: "3px"}}/>
-        <Separator orientation="horizontal" size="4" color="ruby" style={{height: "3px"}}/>
+      <Flex direction="column" gap="4" mb="9">
+        <Separator orientation="horizontal" size="1" color="orange" style={{ height: "3px" }} />
+        <Separator orientation="horizontal" size="2" color="red" style={{ height: "3px" }} />
+        <Separator orientation="horizontal" size="3" color="yellow" style={{ height: "3px" }} />
+        <Separator orientation="horizontal" size="4" color="ruby" style={{ height: "3px" }} />
+      </Flex>
+
+      <Flex gap="3" mb="9" ml="5">
+        <Select.Root defaultValue="apple">
+          <Select.Trigger radius="none" />
+          <Select.Content>
+            <Select.Item value="apple">Apple</Select.Item>
+            <Select.Item value="orange">Orange</Select.Item>
+          </Select.Content>
+        </Select.Root>
+
+        <Select.Root defaultValue="apple">
+          <Select.Trigger radius="large" />
+          <Select.Content>
+            <Select.Item value="apple">Apple</Select.Item>
+            <Select.Item value="orange">Orange</Select.Item>
+          </Select.Content>
+        </Select.Root>
+
+        <Select.Root defaultValue="apple">
+          <Select.Trigger radius="full" />
+          <Select.Content>
+            <Select.Item value="apple">Apple</Select.Item>
+            <Select.Item value="orange">Orange</Select.Item>
+          </Select.Content>
+        </Select.Root>
+      </Flex>
+
+      <Grid columns="2" gap="4" mb="9">
+        <Progress value={10} color="indigo" />
+        <Progress value={10} color="indigo" highContrast />
+        <Progress value={30} color="cyan" />
+        <Progress value={30} color="cyan" highContrast />
+        <Progress value={50} color="orange" />
+        <Progress value={50} color="orange" highContrast />
+        <Progress value={70} color="crimson" />
+        <Progress value={70} color="crimson" highContrast />
+        <Progress value={90} color="gray" />
+        <Progress value={90} color="gray" highContrast />
+      </Grid>
+
+      <Flex gap="4" align="center" mb="9">
+        <Popover.Root>
+          <Popover.Trigger>
+            <Button variant="soft">Size 1</Button>
+          </Popover.Trigger>
+          <Popover.Content size="1" maxWidth="300px">
+            <Text as="p" trim="both" size="1">
+              The quick brown fox jumps over the lazy dog.
+            </Text>
+          </Popover.Content>
+        </Popover.Root>
+
+        <Popover.Root>
+          <Popover.Trigger>
+            <Button variant="soft">Size 2</Button>
+          </Popover.Trigger>
+          <Popover.Content size="2" maxWidth="400px">
+            <Text as="p" trim="both" size="2">
+              The quick brown fox jumps over the lazy dog.
+            </Text>
+          </Popover.Content>
+        </Popover.Root>
+
+        <Popover.Root>
+          <Popover.Trigger>
+            <Button variant="soft">Size 3</Button>
+          </Popover.Trigger>
+          <Popover.Content size="3" maxWidth="500px">
+            <Text as="p" trim="both" size="3">
+              The quick brown fox jumps over the lazy dog.
+            </Text>
+          </Popover.Content>
+        </Popover.Root>
+
+        <Popover.Root>
+          <Popover.Trigger>
+            <Button variant="soft">Size 4</Button>
+          </Popover.Trigger>
+          <Popover.Content size="4">
+            <Text as="p" trim="both" size="4">
+              The quick brown fox jumps over the lazy dog.
+            </Text>
+          </Popover.Content>
+        </Popover.Root>
       </Flex>
     </>
   )
