@@ -1,9 +1,21 @@
 
 import { motion } from 'framer-motion'
+import { useRef } from 'react'
 const Motion = () => {
+
+    const ref = useRef<HTMLButtonElement>(null)
+
+    const variants = {
+        init: { scale: 0, opacity: 0 },
+        anim: { scale: 1, opacity: 1 }
+    }
 
     return (
         <div>
+            <label htmlFor="email">email</label>
+            <input type="email" id="email" />
+            <button onClick={() => ref.current?.focus()}>Открыть </button>
+            
             <motion.p
                 className="bg-red-500 rounded-xl w-25 h-25 text-white flex justify-center items-center m-10"
                 animate={{
@@ -13,12 +25,18 @@ const Motion = () => {
                 transition={{ duration: 1 }}
             >Привет</motion.p>
             <motion.button
-                initial={{ scale: 0, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
+                ref={ref}
+                variants={variants}
+                initial={"init"}
+                animate={"anim"}
                 transition={{ duration: 1 }}
                 className="bg-red-500 rounded-full w-25 h-25 text-white flex justify-center items-center m-10" />
 
             <motion.button
+                variants={variants}
+                initial={"init"}
+                animate={"anim"}
+                transition={{ duration: .5 }}
                 whileHover={{ scale: .9 }}
                 whileTap={{ scale: 1.2 }}
                 onHoverStart={() => console.log('hover started!')}
@@ -38,7 +56,7 @@ const Motion = () => {
             whileInView
             animate (обычная анимация, наименьший) */}
 
-            
+
         </div>
     )
 }
