@@ -14,7 +14,7 @@ const Motion = () => {
         <div>
             <label htmlFor="email">email</label>
             <input type="email" id="email" />
-            <button onClick={() => ref.current?.focus()}>Открыть </button>
+            <button onClick={() => ref.current?.focus()}>Focus </button>
             
             <motion.p
                 className="bg-red-500 rounded-xl w-25 h-25 text-white flex justify-center items-center m-10"
@@ -24,6 +24,7 @@ const Motion = () => {
                 }}
                 transition={{ duration: 1 }}
             >Привет</motion.p>
+
             <motion.button
                 ref={ref}
                 variants={variants}

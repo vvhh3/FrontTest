@@ -26,9 +26,10 @@
 
 // type theme = "light" | "dark"
 
-// type user = Omit<User, "id">
-// type user1 = Pick<User, "id"| "name">
-
+// type user = Omit<User, "id"> - пропустить элемент
+// type user1 = Pick<User, "id"| "name"> - выбрать
+// Partial - делает все поля не обязательными
+// Required - делает все поля обзяательными 
 // function test <T>(val: T):T {
 //     return val
 // }
