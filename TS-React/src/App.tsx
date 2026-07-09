@@ -2,6 +2,7 @@ import { useCallback, useState } from 'react'
 import Test from './Components/Test'
 import Radix from './Components/Radix';
 import Motion from './Components/Motion'
+import { RHFandZod } from './Components/RHFandZod'
 
 function App() {
   const [count, setCount] = useState<number>(0)
@@ -16,7 +17,7 @@ function App() {
       <Test title='MatveyTop' onClick={handleClick} count={count} />
       {/* <Radix/> */}
       <Motion/>
-      
+      <RHFandZod/>
     </>
   )
 }
