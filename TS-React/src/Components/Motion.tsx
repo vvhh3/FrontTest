@@ -14,7 +14,7 @@ const Motion = () => {
         <div>
             <label htmlFor="email">email</label>
             <input type="email" id="email" />
-            <button onClick={() => ref.current?.focus()}>Focus </button>
+            <button onClick={() => ref.current?.focus()} className="bg-zinc-500 text-white p-2 cursor-pointer">Focus</button>
             
             <motion.p
                 className="bg-red-500 rounded-xl w-25 h-25 text-white flex justify-center items-center m-10"
@@ -22,8 +22,7 @@ const Motion = () => {
                     rotate: 360,
                     scale: [4, 3, 2, 1],
                 }}
-                transition={{ duration: 1 }}
-            >Привет</motion.p>
+                transition={{ duration: 1 }}>Привет</motion.p>
 
             <motion.button
                 ref={ref}
@@ -31,7 +30,7 @@ const Motion = () => {
                 initial={"init"}
                 animate={"anim"}
                 transition={{ duration: 1 }}
-                className="bg-red-500 rounded-full w-25 h-25 text-white flex justify-center items-center m-10" />
+                className="bg-red-500 rounded-full w-25 h-25 text-white flex justify-center items-center m-10 border focus:border-black" />
 
             <motion.button
                 variants={variants}
