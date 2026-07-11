@@ -124,9 +124,9 @@ const TestCRUD = () => {
                     placeholder="Новый пост..." />
                 <button
                     onClick={() => {
-                        if (!input.trim()) return;
-                        createMutation.mutate(input.trim());
-                        setInput("");
+                        if (!input.trim()) return
+                        createMutation.mutate(input.trim())
+                        setInput("")
                     }}
                     disabled={createMutation.isPending}
                     className="bg-black text-white px-4 rounded disabled:opacity-50">
