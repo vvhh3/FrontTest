@@ -3,6 +3,7 @@ import Test from './Components/Test'
 import Radix from './Components/Radix';
 import Motion from './Components/Motion'
 import { RHFandZod } from './Components/RHFandZod'
+import RTK from './Components/RTK/RTK';
 
 function App() {
   const [count, setCount] = useState<number>(0)
@@ -18,6 +19,7 @@ function App() {
       {/* <Radix/> */}
       <Motion/>
       <RHFandZod/>
+      <RTK/>
     </>
   )
 }
