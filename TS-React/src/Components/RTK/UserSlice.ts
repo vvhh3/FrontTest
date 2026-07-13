@@ -71,8 +71,7 @@ const userSlice = createSlice({
             .addCase(UserApi.rejected, (state, action) => {
                 state.loading = false;
 
-                state.error =
-                    action.error.message ?? "Ошибка";
+                state.error =action.error.message ?? "Ошибка";
             });
 
     },

@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { UserApi } from "./UserApi"
 import { editUser } from "./UserSlice"
+import { addUser, selectors } from "./NormalSlice"
 
 // Схема валидации формы с помощью Zod
 const InputShema = z.object({
@@ -18,6 +19,10 @@ type InputType = z.infer<typeof InputShema>
 const RTK = () => {
 
     const {user, users, loading, error } = useAppSelectot(state => state.user)
+
+    const usersNormal = useAppSelectot(selectors.selectAll)
+    
+    console.log("123",usersNormal)
 
     const dispatch = useAppDispatch()
 
@@ -38,6 +43,7 @@ const RTK = () => {
     // Обработчик отправки формы: отправляет данные в Redux store
     const Submit = (data: InputType) => {
         dispatch(editUser({id: 1, name: data.name, username: data.username,email: "12" }))
+        dispatch(addUser({id: Date.now(),name: "Hola"}))
         reset() // Очистка формы после отправки
     }
 
