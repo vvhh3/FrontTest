@@ -3,8 +3,6 @@ import { configureStore } from "@reduxjs/toolkit";
 import { persistStore, persistReducer } from "redux-persist";
 import UserReducer from "./UserSlice"
 
-// Создание объекта хранилища для redux-persist с использованием localStorage
-
 //Зачем тут промисы?? -  Разработчики сделали единый интерфейс ,Чтобы библиотеке было всё равно, какое хранилище используется
 // Она ожидает примерно такой интерфейс:
 // interface Storage {

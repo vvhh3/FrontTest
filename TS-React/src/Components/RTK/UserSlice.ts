@@ -3,13 +3,15 @@ import { UserApi, type User } from "./UserApi";
 
 // Тип состояния Slice
 type UserSliceState = {
-    users: User[];
-    loading: boolean;
-    error: string | null;
+    user: User | null
+    users: User[]
+    loading: boolean
+    error: string | null
 };
 
 // Начальное состояние
 const initialState: UserSliceState = {
+    user: null,
     users: [],
     loading: false,
     error: null,
@@ -21,7 +23,9 @@ const userSlice = createSlice({
     initialState,
 
     reducers: {
-
+        editUser: (state,action: PayloadAction<User | null>) => {
+            state.user = action.payload
+        },
         // Полностью заменить список пользователей
         setUsers: (state, action: PayloadAction<User[]>) => {
             state.users = action.payload;
@@ -75,10 +79,11 @@ const userSlice = createSlice({
 });
 
 export const {
+    editUser,
     setUsers,
     clearUsers,
     addUser,
-    removeUser,
+    removeUser
 } = userSlice.actions;
 
 export default userSlice.reducer;
