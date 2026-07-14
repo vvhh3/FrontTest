@@ -29,7 +29,7 @@ const RTK = () => {
     const {
         register,     // Регистрация полей формы
         handleSubmit, // Обработчик отправки формы
-        formState: { errors, isSubmitting }, // Ошибки и статус отправки
+        formState: { errors, isSubmitting },// Ошибки и статус отправки
         reset         // Сброс формы
     } = useForm<InputType>({
         resolver: zodResolver(InputShema),
@@ -61,7 +61,7 @@ const RTK = () => {
 
                 <input placeholder="username" className="p-3 flex bg-black/10"
                     {...register("username",
-                    //      {
+                    // {
                     //     valueAsNumber: true // преобразовывает значение в number
                     // }
                     )} />
